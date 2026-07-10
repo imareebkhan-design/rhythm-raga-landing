@@ -1,4 +1,5 @@
 import { Phone } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { CALL_LINK } from "./constants";
 import logo from "@/assets/logo-rhythmraga.png";
 
@@ -30,12 +31,12 @@ export function Navbar() {
             <Phone className="h-4 w-4" aria-hidden />
             Call Now
           </a>
-          <a
-            href="#book"
+          <Link
+            to="/book"
             className="gradient-cta-btn inline-flex items-center rounded-full px-4 py-2 text-sm font-bold text-cta-foreground shadow-cta transition-transform hover:scale-[1.03] sm:px-5"
           >
-            Book Free Trial
-          </a>
+            Book Free Consult
+          </Link>
         </div>
       </div>
     </header>
