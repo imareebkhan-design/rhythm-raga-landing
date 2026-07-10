@@ -1,36 +1,45 @@
-const courses = [
+import { Guitar, Piano, Drum, Mic2, Music2, Palette, type LucideIcon } from "lucide-react";
+
+type Course = {
+  Icon: LucideIcon;
+  name: string;
+  desc: string;
+  who: string;
+};
+
+const courses: Course[] = [
   {
-    emoji: "🎸",
+    Icon: Guitar,
     name: "Guitar",
-    desc: "Strum your first song within weeks. Acoustic & electric, chords to solos.",
+    desc: "Strum your first song within weeks. Acoustic and electric, from chords to solos.",
     who: "Kids 7+, teens & adults",
   },
   {
-    emoji: "🎹",
+    Icon: Piano,
     name: "Piano / Keyboard",
     desc: "Build a rock-solid foundation in melody, harmony, and technique.",
     who: "Kids 5+, teens & adults",
   },
   {
-    emoji: "🥁",
+    Icon: Drum,
     name: "Drums",
     desc: "Groove, rhythm, and coordination — the most energetic way to learn music.",
     who: "Kids 6+, teens & adults",
   },
   {
-    emoji: "🎤",
+    Icon: Mic2,
     name: "Vocal Singing",
     desc: "Find your voice — breathing, pitch, range, and stage confidence.",
     who: "All ages, all genres",
   },
   {
-    emoji: "💃",
+    Icon: Music2,
     name: "Zumba",
-    desc: "Dance, sweat, and smile. Fitness that never feels like a workout.",
+    desc: "Dance-based fitness that lifts your mood while it works your body.",
     who: "Teens, adults & seniors",
   },
   {
-    emoji: "🎨",
+    Icon: Palette,
     name: "Creative Art",
     desc: "Sketching, painting, and imagination — express what words can't.",
     who: "Kids 5+, teens & adults",
@@ -46,7 +55,7 @@ export function Courses() {
             Our Courses
           </span>
           <h2 className="mt-4 font-display text-3xl font-extrabold sm:text-4xl">
-            Six Ways to Fall in Love with Creativity
+            Six Disciplines. One Creative Home.
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-muted-foreground sm:text-lg">
             Every course is practical, mentor-led, and designed so you're
@@ -55,23 +64,23 @@ export function Courses() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((c) => (
+          {courses.map(({ Icon, name, desc, who }) => (
             <article
-              key={c.name}
+              key={name}
               className="group flex flex-col rounded-3xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card"
             >
               <div className="flex items-start justify-between">
-                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-accent text-3xl transition-transform group-hover:scale-110" aria-hidden>
-                  {c.emoji}
+                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/10 transition-transform group-hover:scale-110">
+                  <Icon className="h-7 w-7 text-primary" aria-hidden />
                 </span>
-                <span className="rounded-full bg-gold/20 px-3 py-1 text-xs font-bold text-gold-foreground">
+                <span className="rounded-full border border-gold/40 bg-gold/10 px-3 py-1 text-xs font-bold tracking-wide text-primary uppercase">
                   Beginner Friendly
                 </span>
               </div>
-              <h3 className="mt-4 font-display text-xl font-extrabold">{c.name}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
+              <h3 className="mt-5 font-display text-xl font-extrabold">{name}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
               <p className="mt-3 text-xs font-bold tracking-wide text-primary uppercase">
-                For: {c.who}
+                For: {who}
               </p>
               <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
                 <a

@@ -62,12 +62,12 @@ export function Hero() {
             />
           </div>
           <div className="glass-card animate-float absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl px-4 py-3 sm:left-6">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gold text-lg" aria-hidden>
-              🎉
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gold/20 ring-1 ring-gold/40">
+              <Sparkles className="h-5 w-5 text-gold" aria-hidden />
             </span>
             <div className="text-sm">
               <p className="font-bold">Grand Launch Offer</p>
-              <p className="text-primary-foreground/80">20% OFF first month</p>
+              <p className="text-primary-foreground/80">20% off your first month</p>
             </div>
           </div>
         </div>
