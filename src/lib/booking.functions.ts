@@ -47,7 +47,9 @@ export const submitLead = createServerFn({ method: "POST" })
 
     const inServiceArea = !!pin;
 
+    const leadId = crypto.randomUUID();
     const insertRow: Database["public"]["Tables"]["leads"]["Insert"] = {
+      id: leadId,
       name: data.name,
       phone: data.phone,
       whatsapp_ok: data.whatsapp_ok,
@@ -63,18 +65,14 @@ export const submitLead = createServerFn({ method: "POST" })
       fbclid: data.fbclid ?? null,
     };
 
-    const { data: lead, error } = await supabase
-      .from("leads")
-      .insert(insertRow)
-      .select("id")
-      .single();
+    const { error } = await supabase.from("leads").insert(insertRow);
 
-    if (error || !lead) {
+    if (error) {
       console.error("submitLead insert error", JSON.stringify(error));
       throw new Error("Could not save your details. Please try again.");
     }
 
-    return { leadId: lead.id, inServiceArea };
+    return { leadId, inServiceArea };
   });
 
 /** Fetch open slots for the next N days. Public. */
