@@ -2,21 +2,6 @@
 @source "../src";
 @import "tw-animate-css";
 
-@font-face {
-  font-family: "Fraunces";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/__l5e/assets-v1/d75cfe94-ad98-402a-8fc8-a0f2351dfea3/Fraunces-Italic.ttf") format("truetype-variations");
-}
-
-@font-face {
-  font-family: "Inter Tight";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("/__l5e/assets-v1/d95de3e1-ba18-422e-8f10-09a1d5c39eff/InterTight-Italic.ttf") format("truetype-variations");
-}
 
 @custom-variant dark (&:is(.dark *));
 
