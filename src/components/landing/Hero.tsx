@@ -1,4 +1,4 @@
-import { Phone, Play, Pause, VolumeX, Volume2, ArrowRight, MapPin, ArrowDown } from "lucide-react";
+import { Phone, ArrowRight, MapPin } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import galleryGuitar from "@/assets/gallery-guitar.jpg";
 import galleryPiano from "@/assets/gallery-piano.jpg";
