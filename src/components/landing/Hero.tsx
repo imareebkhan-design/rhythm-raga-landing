@@ -1,5 +1,5 @@
-import { Phone, ArrowRight, MapPin } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Phone, ArrowRight, MapPin, Sparkles } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import galleryGuitar from "@/assets/gallery-guitar.jpg";
 import galleryPiano from "@/assets/gallery-piano.jpg";
 import galleryDrums from "@/assets/gallery-drums.jpg";
@@ -8,75 +8,30 @@ import galleryZumba from "@/assets/gallery-zumba.jpg";
 import galleryArt from "@/assets/gallery-art.jpg";
 import { CALL_LINK } from "./constants";
 
-type Discipline = {
-  key: string;
-  eyebrow: string;
-  headline: string;
-  accent: string;
-  image: string;
-  tint: string; // background color for the hero-showreel
-};
+type Discipline = { key: string; label: string; image: string };
 
 const DISCIPLINES: Discipline[] = [
-  {
-    key: "guitar",
-    eyebrow: "Six Strings · Endless Songs",
-    headline: "Learn Guitar with Mentors Who Play.",
-    accent: "Guitar",
-    image: galleryGuitar,
-    tint: "oklch(0.32 0.18 279)",
-  },
-  {
-    key: "piano",
-    eyebrow: "Eighty-Eight Keys · One Voice",
-    headline: "Play Piano the Way You Always Imagined.",
-    accent: "Piano",
-    image: galleryPiano,
-    tint: "oklch(0.30 0.14 300)",
-  },
-  {
-    key: "vocal",
-    eyebrow: "Breath · Pitch · Presence",
-    headline: "Find the Voice You Were Born With.",
-    accent: "Vocals",
-    image: galleryVocal,
-    tint: "oklch(0.34 0.16 25)",
-  },
-  {
-    key: "drums",
-    eyebrow: "Groove · Rhythm · Release",
-    headline: "Feel the Beat. Own the Room.",
-    accent: "Drums",
-    image: galleryDrums,
-    tint: "oklch(0.28 0.10 255)",
-  },
-  {
-    key: "zumba",
-    eyebrow: "Dance · Fitness · Joy",
-    headline: "Move Like Nobody's Watching.",
-    accent: "Zumba",
-    image: galleryZumba,
-    tint: "oklch(0.36 0.18 340)",
-  },
-  {
-    key: "art",
-    eyebrow: "Pencil · Colour · Imagination",
-    headline: "Paint What Words Can't Say.",
-    accent: "Creative Art",
-    image: galleryArt,
-    tint: "oklch(0.34 0.14 60)",
-  },
+  { key: "guitar", label: "Guitar", image: galleryGuitar },
+  { key: "piano", label: "Piano", image: galleryPiano },
+  { key: "vocal", label: "Vocals", image: galleryVocal },
+  { key: "drums", label: "Drums", image: galleryDrums },
+  { key: "zumba", label: "Zumba", image: galleryZumba },
+  { key: "art", label: "Creative Art", image: galleryArt },
 ];
 
-const CYCLE_MS = 4800;
+const FLOAT_POSITIONS = [
+  { className: "left-[3%] top-[18%] h-28 w-28 md:h-36 md:w-36 rounded-[2rem] rotate-[-8deg]", tint: "bg-primary/15" },
+  { className: "right-[6%] top-[12%] h-28 w-28 md:h-40 md:w-40 rounded-full", tint: "bg-cta/20" },
+  { className: "left-[8%] bottom-[10%] h-24 w-24 md:h-32 md:w-32 rounded-[1.5rem] rotate-[10deg]", tint: "bg-lavender-strong" },
+  { className: "right-[4%] bottom-[8%] h-28 w-28 md:h-36 md:w-36 rounded-[2rem] rotate-[-6deg]", tint: "bg-primary/15" },
+];
+
+const CYCLE_MS = 3800;
 
 export function Hero() {
   const [index, setIndex] = useState(0);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const active = DISCIPLINES[index];
-
-  // Auto-advance loop
   useEffect(() => {
     timerRef.current = setTimeout(() => {
       setIndex((i) => (i + 1) % DISCIPLINES.length);
@@ -86,158 +41,119 @@ export function Hero() {
     };
   }, [index]);
 
-  const jumpTo = (i: number) => {
-    setIndex(i);
-  };
-
-  // Keyboard arrows
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") jumpTo((index + 1) % DISCIPLINES.length);
-      if (e.key === "ArrowLeft") jumpTo((index - 1 + DISCIPLINES.length) % DISCIPLINES.length);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [index]);
-
-  const tintStyle = useMemo(
-    () => ({ ["--hero-tint" as string]: active.tint }) as React.CSSProperties,
-    [active.tint]
-  );
+  const active = DISCIPLINES[index];
 
   return (
     <section
       id="top"
-      style={tintStyle}
-      className="hero-showreel relative overflow-hidden pt-28 pb-20 text-primary-foreground md:pt-36 md:pb-28"
-      aria-roledescription="carousel"
-      aria-label="Rhythm Raga disciplines showreel"
+      className="relative overflow-hidden bg-background pt-32 pb-20 md:pt-40 md:pb-28"
+      aria-label="Rhythm Raga hero"
     >
-      {/* Ambient glows */}
-      <div aria-hidden className="pointer-events-none absolute -top-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-white/10 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -bottom-52 -left-32 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
-
-      {/* Hand-drawn scribble ribbon */}
-      <svg
+      {/* Soft ambient wash */}
+      <div
         aria-hidden
-        viewBox="0 0 1400 500"
-        preserveAspectRatio="none"
-        className="pointer-events-none absolute inset-x-0 top-1/3 h-[60%] w-full opacity-40"
-      >
-        <path
-          d="M -50 250 C 200 120, 380 380, 620 240 S 1000 100, 1200 300 S 1500 220, 1500 220"
-          fill="none"
-          stroke="oklch(0.85 0.15 90)"
-          strokeWidth="3"
-          strokeLinecap="round"
-          className="scribble-draw"
-        />
-      </svg>
+        className="pointer-events-none absolute inset-x-0 top-0 h-[42rem]"
+        style={{
+          background:
+            "radial-gradient(900px 480px at 50% 0%, var(--color-lavender-strong) 0%, transparent 70%)",
+        }}
+      />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[7fr_5fr] lg:gap-14">
-        {/* Left — editorial headline */}
-        <div className="text-center lg:text-left">
-          <span className="glass-card inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold tracking-wide uppercase">
-            <MapPin className="h-3.5 w-3.5 text-gold" aria-hidden />
-            Now Open in GTB Nagar, Delhi
+      {/* Floating decorative cutouts (rendered around headline) */}
+      {DISCIPLINES.slice(0, 4).map((d, i) => {
+        const pos = FLOAT_POSITIONS[i];
+        return (
+          <figure
+            key={d.key}
+            aria-hidden
+            style={{ ["--rr-rot" as string]: "0deg", animationDelay: `${i * 220}ms` }}
+            className={`animate-float pointer-events-none absolute hidden overflow-hidden shadow-card ring-1 ring-border md:block ${pos.className}`}
+          >
+            <div className={`absolute inset-0 ${pos.tint}`} />
+            <img
+              src={d.image}
+              alt=""
+              loading="lazy"
+              className="relative h-full w-full object-cover mix-blend-luminosity opacity-95"
+            />
+          </figure>
+        );
+      })}
+
+      <div className="relative mx-auto max-w-5xl px-4 text-center sm:px-6">
+        {/* Location badge */}
+        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
+          <MapPin className="h-3.5 w-3.5 text-primary" aria-hidden />
+          Now Open in GTB Nagar, Delhi
+        </span>
+
+        {/* Editorial headline */}
+        <h1 className="mt-8 font-editorial text-[2.75rem] leading-[1.02] tracking-[-0.04em] text-ink sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem]">
+          Learn, Play &amp; Grow with{" "}
+          <span
+            key={active.key}
+            className="animate-paper-swap inline-block text-gradient-gold"
+          >
+            {active.label}
           </span>
+        </h1>
 
-          <div key={active.key} className="animate-paper-swap mt-6" aria-live="polite">
-            <p className="font-editorial text-lg italic text-gold sm:text-xl">
-              {active.eyebrow}
-            </p>
-            <h1 className="font-editorial mt-2 text-[2.75rem] leading-[1.02] font-normal sm:text-6xl lg:text-[5.25rem]">
-              {active.headline}
-            </h1>
-          </div>
+        <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          Six disciplines. One creative home. Guitar, Piano, Drums, Vocals,
+          Zumba &amp; Creative Art — taught by mentors who love what they do.
+          Book your free trial and meet your teacher this week.
+        </p>
 
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg lg:mx-0">
-            Guitar, Piano, Drums, Vocals, Zumba & Creative Art — six disciplines,
-            one creative home. Book a free trial and meet your mentor this week.
-          </p>
-
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
-            <a
-              href="#book"
-              className="gradient-cta-btn group inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-bold text-cta-foreground shadow-cta transition-transform hover:scale-[1.03] sm:w-auto"
-            >
-              Book Your Seat Now
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden />
-            </a>
-            <a
-              href={CALL_LINK}
-              className="glass-card inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-bold transition-colors hover:bg-white/20 sm:w-auto"
-            >
-              <Phone className="h-5 w-5" aria-hidden />
-              Call Now
-            </a>
-          </div>
-
-          {/* Discipline pips */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-            {DISCIPLINES.map((d, i) => (
-              <button
-                key={d.key}
-                onClick={() => jumpTo(i)}
-                aria-label={`Show ${d.accent}`}
-                aria-current={i === index}
-                className={`rounded-full border px-3 py-1 text-xs font-bold tracking-wide uppercase transition-all ${
-                  i === index
-                    ? "border-gold bg-gold text-gold-foreground"
-                    : "border-white/25 text-primary-foreground/70 hover:border-white/60 hover:text-primary-foreground"
-                }`}
-              >
-                {d.accent}
-              </button>
-            ))}
-          </div>
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href="#book"
+            className="gradient-cta-btn group inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-cta-foreground shadow-cta transition-transform hover:scale-[1.03] sm:w-auto"
+          >
+            Book Your Free Trial
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden />
+          </a>
+          <a
+            href={CALL_LINK}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border bg-background px-8 py-4 text-base font-semibold text-ink transition-colors hover:bg-accent sm:w-auto"
+          >
+            <Phone className="h-5 w-5 text-primary" aria-hidden />
+            Call Now
+          </a>
         </div>
 
-        {/* Right — cutout collage */}
-        <div className="relative mx-auto h-[26rem] w-full max-w-lg sm:h-[32rem] lg:h-[36rem] lg:max-w-none">
-          {DISCIPLINES.map((d, i) => {
-            const offset = i - index;
-            const isActive = i === index;
-            const rot = [-6, 4, -3, 6, -4, 3][i] ?? 0;
-            const baseX = [0, 42, 82, 118, 150, 178][i] ?? 0;
-            const baseY = [10, 60, 10, 70, 20, 90][i] ?? 0;
-            return (
-              <figure
-                key={d.key}
-                aria-hidden={!isActive}
-                className="animate-portrait-in absolute overflow-hidden rounded-[2rem] shadow-card ring-1 ring-white/25 transition-all duration-700 ease-out"
-                style={
-                  {
-                    ["--rr-rot" as string]: `${rot}deg`,
-                    left: `${baseX}px`,
-                    top: `${baseY}px`,
-                    width: isActive ? "18rem" : "9.5rem",
-                    height: isActive ? "24rem" : "13rem",
-                    transform: `rotate(${rot}deg) translateY(${offset === 0 ? 0 : offset * 4}px)`,
-                    zIndex: isActive ? 10 : 5 - Math.abs(offset),
-                    opacity: Math.abs(offset) > 2 ? 0.55 : 1,
-                    animationDelay: `${i * 90}ms`,
-                  } as React.CSSProperties
-                }
-              >
-                <img
-                  src={d.image}
-                  alt={`${d.accent} student at Rhythm Raga`}
-                  loading={i === 0 ? "eager" : "lazy"}
-                  fetchPriority={i === 0 ? "high" : "auto"}
-                  className="h-full w-full object-cover"
-                />
-                {isActive && (
-                  <figcaption className="glass-card animate-fade-up absolute right-3 bottom-3 rounded-full px-3 py-1 text-[10px] font-bold tracking-wide uppercase">
-                    {d.accent}
-                  </figcaption>
-                )}
-              </figure>
-            );
-          })}
+        {/* Discipline chips */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
+          {DISCIPLINES.map((d, i) => (
+            <button
+              key={d.key}
+              onClick={() => setIndex(i)}
+              aria-current={i === index}
+              aria-label={`Feature ${d.label}`}
+              className={`rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all ${
+                i === index
+                  ? "border-primary bg-primary text-primary-foreground shadow-soft"
+                  : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-ink"
+              }`}
+            >
+              {d.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Trust strip */}
+        <div className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5">
+            <Sparkles className="h-3.5 w-3.5 text-primary" aria-hidden />
+            500+ Students
+          </span>
+          <span className="hidden h-3 w-px bg-border sm:block" />
+          <span>Expert Mentors</span>
+          <span className="hidden h-3 w-px bg-border sm:block" />
+          <span>Kids &amp; Adults</span>
+          <span className="hidden h-3 w-px bg-border sm:block" />
+          <span>Small Batches</span>
         </div>
       </div>
-
     </section>
   );
 }

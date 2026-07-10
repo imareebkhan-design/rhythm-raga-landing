@@ -75,21 +75,21 @@ export function LeadForm() {
   };
 
   return (
-    <section id="book" className="gradient-hero relative overflow-hidden py-16 text-primary-foreground md:py-24">
+    <section id="book" className="gradient-hero relative overflow-hidden py-16 text-ink md:py-24">
       <div aria-hidden className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
         <div className="text-center lg:text-left">
           <h2 className="font-display text-3xl font-extrabold sm:text-4xl lg:text-5xl">
             Your Creative Journey <span className="text-gradient-gold">Starts Today.</span>
           </h2>
-          <p className="mt-4 max-w-md text-primary-foreground/85 sm:text-lg lg:mx-0 mx-auto">
+          <p className="mt-4 max-w-md text-muted-foreground sm:text-lg lg:mx-0 mx-auto">
             Book your free trial today and claim exclusive launch benefits before
             seats are filled.
           </p>
           <ul className="mt-6 space-y-2.5 text-left text-sm sm:text-base">
             {["100% free trial class — no strings attached", "Founding-student launch offers", "Reply within a few hours"].map((t) => (
               <li key={t} className="flex items-center justify-center gap-2.5 lg:justify-start">
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-gold" aria-hidden />
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" aria-hidden />
                 {t}
               </li>
             ))}
@@ -99,9 +99,9 @@ export function LeadForm() {
         <div className="glass-card rounded-3xl p-6 sm:p-8">
           {submitted ? (
             <div className="py-10 text-center">
-              <CheckCircle2 className="mx-auto h-14 w-14 text-gold" aria-hidden />
+              <CheckCircle2 className="mx-auto h-14 w-14 text-primary" aria-hidden />
               <h3 className="mt-4 font-display text-2xl font-extrabold">You're all set.</h3>
-              <p className="mt-2 text-primary-foreground/85">
+              <p className="mt-2 text-muted-foreground">
                 We've opened WhatsApp with your details. Hit send and we'll
                 confirm your free trial slot right away.
               </p>
@@ -114,7 +114,7 @@ export function LeadForm() {
                 <input
                   id="name" name="name" required maxLength={100} autoComplete="name"
                   placeholder="Your full name"
-                  className="w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-gold focus:outline-none"
+                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -123,7 +123,7 @@ export function LeadForm() {
                   <input
                     id="phone" name="phone" type="tel" required maxLength={15} autoComplete="tel"
                     placeholder="98XXXXXXXX" pattern="[0-9+\s-]{8,15}"
-                    className="w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-gold focus:outline-none"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                   />
                 </div>
                 <div>
@@ -131,7 +131,7 @@ export function LeadForm() {
                   <input
                     id="age" name="age" type="number" min={4} max={99} required
                     placeholder="Age"
-                    className="w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-primary-foreground placeholder:text-primary-foreground/50 focus:border-gold focus:outline-none"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                   />
                 </div>
               </div>
@@ -139,7 +139,7 @@ export function LeadForm() {
                 <label htmlFor="course" className="mb-1.5 block text-sm font-bold">Course Interested In</label>
                 <select
                   id="course" name="course" required
-                  className="w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-primary-foreground focus:border-gold focus:outline-none [&>option]:text-foreground"
+                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none [&>option]:text-foreground"
                 >
                   {courseOptions.map((c) => <option key={c}>{c}</option>)}
                 </select>
@@ -148,7 +148,7 @@ export function LeadForm() {
                 <label htmlFor="timing" className="mb-1.5 block text-sm font-bold">Preferred Timing</label>
                 <select
                   id="timing" name="timing" required
-                  className="w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-primary-foreground focus:border-gold focus:outline-none [&>option]:text-foreground"
+                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none [&>option]:text-foreground"
                 >
                   {timingOptions.map((t) => <option key={t}>{t}</option>)}
                 </select>
@@ -159,7 +159,7 @@ export function LeadForm() {
               >
                 Book Free Trial
               </button>
-              <p className="flex items-center justify-center gap-1.5 text-center text-xs text-primary-foreground/70">
+              <p className="flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
                 <MessageCircle className="h-3.5 w-3.5" aria-hidden />
                 Submitting opens WhatsApp with your details pre-filled.
               </p>
