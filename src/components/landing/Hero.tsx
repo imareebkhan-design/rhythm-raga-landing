@@ -87,7 +87,6 @@ export function Hero() {
   }, [index]);
 
   const jumpTo = (i: number) => {
-    setProgress(0);
     setIndex(i);
   };
 
@@ -96,10 +95,6 @@ export function Hero() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") jumpTo((index + 1) % DISCIPLINES.length);
       if (e.key === "ArrowLeft") jumpTo((index - 1 + DISCIPLINES.length) % DISCIPLINES.length);
-      if (e.key === " " && (e.target as HTMLElement)?.tagName !== "INPUT") {
-        e.preventDefault();
-        setPlaying((p) => !p);
-      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
