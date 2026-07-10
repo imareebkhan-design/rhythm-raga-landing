@@ -38,7 +38,10 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
   --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-editorial: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
   --font-sans: "Manrope", sans-serif;
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
   --shadow-soft: 0 4px 24px -6px oklch(0.51 0.28 275 / 0.1);
   --shadow-card: 0 10px 40px -12px oklch(0.51 0.28 275 / 0.16);
   --shadow-cta: 0 8px 28px -8px oklch(0.72 0.19 50 / 0.55);
@@ -48,6 +51,8 @@
   --radius: 1rem;
   --background: oklch(0.99 0.004 280);
   --foreground: oklch(0.22 0.05 280);
+  --paper: oklch(0.975 0.012 80);
+  --ink: oklch(0.18 0.04 285);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.22 0.05 280);
   --popover: oklch(1 0 0);
