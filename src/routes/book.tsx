@@ -101,6 +101,7 @@ function BookLead() {
         JSON.stringify({
           leadId: res.leadId,
           name: parsed.data.name,
+          phone: parsed.data.phone,
           course: parsed.data.course,
           inServiceArea: res.inServiceArea,
         }),
