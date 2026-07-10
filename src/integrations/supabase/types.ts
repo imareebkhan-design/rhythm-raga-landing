@@ -220,6 +220,24 @@ export type Database = {
         }
         Returns: boolean
       }
+      submit_lead: {
+        Args: {
+          _age: number
+          _course: string
+          _fbclid: string
+          _gclid: string
+          _in_service_area: boolean
+          _name: string
+          _phone: string
+          _pincode: string
+          _utm_campaign: string
+          _utm_content: string
+          _utm_medium: string
+          _utm_source: string
+          _whatsapp_ok: boolean
+        }
+        Returns: string
+      }
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"
