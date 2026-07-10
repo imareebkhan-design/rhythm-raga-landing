@@ -1,4 +1,4 @@
-import { Phone, Play, Pause, VolumeX, Volume2, ArrowRight, MapPin, ArrowDown } from "lucide-react";
+import { Phone, ArrowRight, MapPin } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import galleryGuitar from "@/assets/gallery-guitar.jpg";
 import galleryPiano from "@/assets/gallery-piano.jpg";
@@ -72,38 +72,21 @@ const CYCLE_MS = 4800;
 
 export function Hero() {
   const [index, setIndex] = useState(0);
-  const [playing, setPlaying] = useState(true);
-  const [muted, setMuted] = useState(true);
-  const [progress, setProgress] = useState(0);
-  const rafRef = useRef<number | null>(null);
-  const startRef = useRef<number>(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const active = DISCIPLINES[index];
 
-  // Progress + auto-advance loop
+  // Auto-advance loop
   useEffect(() => {
-    if (!playing) return;
-    startRef.current = performance.now() - progress * CYCLE_MS;
-
-    const tick = (t: number) => {
-      const elapsed = (t - startRef.current) / CYCLE_MS;
-      if (elapsed >= 1) {
-        setProgress(0);
-        setIndex((i) => (i + 1) % DISCIPLINES.length);
-      } else {
-        setProgress(elapsed);
-        rafRef.current = requestAnimationFrame(tick);
-      }
-    };
-    rafRef.current = requestAnimationFrame(tick);
+    timerRef.current = setTimeout(() => {
+      setIndex((i) => (i + 1) % DISCIPLINES.length);
+    }, CYCLE_MS);
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [playing, index]);
+  }, [index]);
 
   const jumpTo = (i: number) => {
-    setProgress(0);
     setIndex(i);
   };
 
@@ -112,10 +95,6 @@ export function Hero() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") jumpTo((index + 1) % DISCIPLINES.length);
       if (e.key === "ArrowLeft") jumpTo((index - 1 + DISCIPLINES.length) % DISCIPLINES.length);
-      if (e.key === " " && (e.target as HTMLElement)?.tagName !== "INPUT") {
-        e.preventDefault();
-        setPlaying((p) => !p);
-      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -259,47 +238,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Showreel control bar */}
-      <div className="relative mx-auto mt-14 flex max-w-6xl flex-col gap-3 px-4 sm:px-6">
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => setPlaying((p) => !p)}
-            aria-label={playing ? "Pause showreel" : "Play showreel"}
-            className="glass-card grid h-11 w-11 place-items-center rounded-full transition-colors hover:bg-white/20"
-          >
-            {playing ? <Pause className="h-4 w-4" aria-hidden /> : <Play className="h-4 w-4" aria-hidden />}
-          </button>
-          <button
-            onClick={() => setMuted((m) => !m)}
-            aria-label={muted ? "Unmute" : "Mute"}
-            className="glass-card grid h-11 w-11 place-items-center rounded-full transition-colors hover:bg-white/20"
-          >
-            {muted ? <VolumeX className="h-4 w-4" aria-hidden /> : <Volume2 className="h-4 w-4" aria-hidden />}
-          </button>
-
-          <div className="flex flex-1 items-center gap-3">
-            <span className="font-mono text-xs tabular-nums text-primary-foreground/70">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <div className="relative h-[3px] flex-1 overflow-hidden rounded-full bg-white/15">
-              <div
-                className="absolute inset-y-0 left-0 bg-gold"
-                style={{ width: `${progress * 100}%` }}
-              />
-            </div>
-            <span className="font-mono text-xs tabular-nums text-primary-foreground/70">
-              {String(DISCIPLINES.length).padStart(2, "0")}
-            </span>
-          </div>
-
-          <a
-            href="#courses"
-            className="hidden items-center gap-1.5 text-xs font-bold tracking-wide uppercase text-primary-foreground/80 hover:text-primary-foreground sm:inline-flex"
-          >
-            Scroll <ArrowDown className="h-3.5 w-3.5" aria-hidden />
-          </a>
-        </div>
-      </div>
     </section>
   );
 }
