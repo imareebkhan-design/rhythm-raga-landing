@@ -12,9 +12,10 @@ export function Footer() {
             <img
               src={logo}
               alt="Rhythm Raga — School of Music and Arts"
-              className="h-12 w-auto md:h-14"
+              className="h-20 w-auto md:h-24"
               loading="lazy"
             />
+
 
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
               A premium creative learning academy in GTB Nagar, Delhi. Music,
