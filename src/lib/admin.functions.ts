@@ -51,7 +51,7 @@ export const adminUpdateLead = createServerFn({ method: "POST" })
     const patch: Record<string, any> = {};
     if (data.status) patch.status = data.status;
     if (data.notes !== undefined) patch.notes = data.notes;
-    const { error } = await context.supabase.from("leads").update(patch).eq("id", data.id);
+    const { error } = await (context.supabase.from("leads") as any).update(patch).eq("id", data.id);
     if (error) throw new Error(error.message);
     return { ok: true };
   });
