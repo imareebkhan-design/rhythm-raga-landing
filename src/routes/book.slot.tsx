@@ -31,7 +31,7 @@ function PickSlot() {
   const navigate = useNavigate();
   const listFn = useServerFn(listAvailableSlots);
   const bookFn = useServerFn(bookSlot);
-  const [lead, setLead] = useState<{ leadId: string; name: string; course: string } | null>(null);
+  const [lead, setLead] = useState<{ leadId: string; name: string; course: string; inServiceArea?: boolean } | null>(null);
   const [pendingSlotId, setPendingSlotId] = useState<string | null>(null);
 
   useEffect(() => {
