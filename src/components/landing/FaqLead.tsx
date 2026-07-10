@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { CheckCircle2, ChevronDown, MessageCircle } from "lucide-react";
+import { CheckCircle2, ChevronDown, ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { FAQS, WHATSAPP_LINK } from "./constants";
 
 /* ---------- FAQ ---------- */
@@ -49,31 +50,9 @@ export function Faq() {
   );
 }
 
-/* ---------- Lead Form + Final CTA ---------- */
-
-const courseOptions = ["Guitar", "Piano / Keyboard", "Drums", "Vocal Singing", "Zumba", "Creative Art"];
-const timingOptions = ["Weekday Morning", "Weekday Evening", "Weekend"];
+/* ---------- Final CTA — links to full /book funnel ---------- */
 
 export function LeadForm() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const name = String(fd.get("name") ?? "").trim().slice(0, 100);
-    const phone = String(fd.get("phone") ?? "").trim().slice(0, 15);
-    const age = String(fd.get("age") ?? "").trim().slice(0, 3);
-    const course = String(fd.get("course") ?? "");
-    const timing = String(fd.get("timing") ?? "");
-    if (!name || !phone) return;
-
-    const msg = encodeURIComponent(
-      `Hi Rhythm Raga! I'd like to book a free trial class.\n\nName: ${name}\nPhone: ${phone}\nAge: ${age}\nCourse: ${course}\nPreferred Timing: ${timing}`,
-    );
-    window.open(`https://wa.me/919999999999?text=${msg}`, "_blank", "noopener");
-    setSubmitted(true);
-  };
-
   return (
     <section id="book" className="gradient-hero relative overflow-hidden py-16 text-ink md:py-24">
       <div aria-hidden className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
@@ -83,11 +62,15 @@ export function LeadForm() {
             Your Creative Journey <span className="text-gradient-gold">Starts Today.</span>
           </h2>
           <p className="mt-4 max-w-md text-muted-foreground sm:text-lg lg:mx-0 mx-auto">
-            Book your free trial today and claim exclusive launch benefits before
-            seats are filled.
+            Book a free 30-minute consultation with a Rhythm Raga expert. We'll understand
+            your goals and design a learning path — no fees, no obligation.
           </p>
           <ul className="mt-6 space-y-2.5 text-left text-sm sm:text-base">
-            {["100% free trial class — no strings attached", "Founding-student launch offers", "Reply within a few hours"].map((t) => (
+            {[
+              "100% free consultation with a senior instructor",
+              "Personalised learning path in 30 minutes",
+              "Limited slots this week — first come, first served",
+            ].map((t) => (
               <li key={t} className="flex items-center justify-center gap-2.5 lg:justify-start">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" aria-hidden />
                 {t}
@@ -97,74 +80,37 @@ export function LeadForm() {
         </div>
 
         <div className="glass-card rounded-3xl p-6 sm:p-8">
-          {submitted ? (
-            <div className="py-10 text-center">
-              <CheckCircle2 className="mx-auto h-14 w-14 text-primary" aria-hidden />
-              <h3 className="mt-4 font-display text-2xl font-extrabold">You're all set.</h3>
-              <p className="mt-2 text-muted-foreground">
-                We've opened WhatsApp with your details. Hit send and we'll
-                confirm your free trial slot right away.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <h3 className="font-display text-xl font-extrabold">Book Your Free Trial</h3>
-              <div>
-                <label htmlFor="name" className="mb-1.5 block text-sm font-bold">Name</label>
-                <input
-                  id="name" name="name" required maxLength={100} autoComplete="name"
-                  placeholder="Your full name"
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
+          <h3 className="font-display text-xl font-extrabold">Book Your Free Consultation</h3>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Takes less than a minute. Enter your details and pick a slot that works for you.
+          </p>
+          <ol className="my-6 space-y-3 text-sm">
+            {[
+              { n: 1, t: "Share your details", d: "Name, phone, course you're curious about" },
+              { n: 2, t: "Pick a slot", d: "From open times over the next 7 days" },
+              { n: 3, t: "Meet your expert", d: "30-minute call to design your journey" },
+            ].map((s) => (
+              <li key={s.n} className="flex gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                  {s.n}
+                </span>
                 <div>
-                  <label htmlFor="phone" className="mb-1.5 block text-sm font-bold">Phone Number</label>
-                  <input
-                    id="phone" name="phone" type="tel" required maxLength={15} autoComplete="tel"
-                    placeholder="98XXXXXXXX" pattern="[0-9+\s-]{8,15}"
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                  />
+                  <div className="font-bold text-ink">{s.t}</div>
+                  <div className="text-muted-foreground">{s.d}</div>
                 </div>
-                <div>
-                  <label htmlFor="age" className="mb-1.5 block text-sm font-bold">Age</label>
-                  <input
-                    id="age" name="age" type="number" min={4} max={99} required
-                    placeholder="Age"
-                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="course" className="mb-1.5 block text-sm font-bold">Course Interested In</label>
-                <select
-                  id="course" name="course" required
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none [&>option]:text-foreground"
-                >
-                  {courseOptions.map((c) => <option key={c}>{c}</option>)}
-                </select>
-              </div>
-              <div>
-                <label htmlFor="timing" className="mb-1.5 block text-sm font-bold">Preferred Timing</label>
-                <select
-                  id="timing" name="timing" required
-                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none [&>option]:text-foreground"
-                >
-                  {timingOptions.map((t) => <option key={t}>{t}</option>)}
-                </select>
-              </div>
-              <button
-                type="submit"
-                className="gradient-cta-btn w-full rounded-full px-6 py-4 text-base font-bold text-cta-foreground shadow-cta transition-transform hover:scale-[1.02]"
-              >
-                Book Free Trial
-              </button>
-              <p className="flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
-                <MessageCircle className="h-3.5 w-3.5" aria-hidden />
-                Submitting opens WhatsApp with your details pre-filled.
-              </p>
-            </form>
-          )}
+              </li>
+            ))}
+          </ol>
+          <Link
+            to="/book"
+            className="gradient-cta-btn group flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 text-base font-bold text-cta-foreground shadow-cta transition-transform hover:scale-[1.02]"
+          >
+            Start booking
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+          <p className="mt-3 text-center text-xs text-muted-foreground">
+            Serving GTB Nagar, Delhi within a ~5 km radius.
+          </p>
         </div>
       </div>
     </section>
