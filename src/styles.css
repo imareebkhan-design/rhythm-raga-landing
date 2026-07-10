@@ -106,7 +106,7 @@
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display);
     letter-spacing: -0.035em;
-    font-weight: 400;
+    font-weight: 800;
     color: var(--color-ink);
   }
 }
