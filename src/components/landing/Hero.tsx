@@ -72,11 +72,7 @@ const CYCLE_MS = 4800;
 
 export function Hero() {
   const [index, setIndex] = useState(0);
-  const [playing, setPlaying] = useState(true);
-  const [muted, setMuted] = useState(true);
-  const [progress, setProgress] = useState(0);
-  const rafRef = useRef<number | null>(null);
-  const startRef = useRef<number>(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const active = DISCIPLINES[index];
 
