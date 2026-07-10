@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
+import { createFileRoute, useNavigate, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/book")({
       { name: "robots", content: "noindex" },
     ],
   }),
-  component: BookLead,
+  component: BookRouteComponent,
   errorComponent: ({ error, reset }) => (
     <BookingShell step={1} title="Something went wrong">
       <p className="text-muted-foreground">{error.message}</p>
@@ -33,6 +33,16 @@ export const Route = createFileRoute("/book")({
   ),
   notFoundComponent: () => <BookingShell step={1} title="Page not found">Nothing here.</BookingShell>,
 });
+
+function BookRouteComponent() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+
+  if (pathname !== "/book") {
+    return <Outlet />;
+  }
+
+  return <BookLead />;
+}
 
 function readUtm(): Record<string, string> {
   if (typeof window === "undefined") return {};
