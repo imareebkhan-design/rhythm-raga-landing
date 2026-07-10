@@ -2,15 +2,34 @@ import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import type { Database } from "@/integrations/supabase/types";
-import { leadSchema, bookSlotSchema, type LeadInput } from "./booking-schemas";
+import { leadSchema, bookSlotSchema } from "./booking-schemas";
+
+function isNewKey(v: string) {
+  return v.startsWith("sb_publishable_") || v.startsWith("sb_secret_");
+}
+function keyAwareFetch(key: string): typeof fetch {
+  return (input, init) => {
+    const headers = new Headers(
+      typeof Request !== "undefined" && input instanceof Request ? input.headers : undefined,
+    );
+    if (init?.headers) new Headers(init.headers).forEach((v, k) => headers.set(k, v));
+    if (isNewKey(key) && headers.get("Authorization") === `Bearer ${key}`) {
+      headers.delete("Authorization");
+    }
+    headers.set("apikey", key);
+    return fetch(input, { ...init, headers });
+  };
+}
 
 function publicClient() {
-  return createClient<Database>(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_PUBLISHABLE_KEY!,
-    { auth: { storage: undefined, persistSession: false, autoRefreshToken: false } },
-  );
+  const url = process.env.SUPABASE_URL!;
+  const key = process.env.SUPABASE_PUBLISHABLE_KEY!;
+  return createClient<Database>(url, key, {
+    global: { fetch: keyAwareFetch(key) },
+    auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
+  });
 }
+
 
 /** Submit a lead. Returns { leadId, inServiceArea }. */
 export const submitLead = createServerFn({ method: "POST" })
