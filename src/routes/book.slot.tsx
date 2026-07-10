@@ -81,7 +81,11 @@ function PickSlot() {
           JSON.stringify({
             bookingId: res.bookingId,
             slot: res.slot,
-            lead: res.lead,
+            lead: res.lead ?? {
+              name: lead.name,
+              phone: (lead as any).phone ?? "",
+              course: lead.course,
+            },
           }),
         );
         navigate({ to: "/book/confirmed" });
