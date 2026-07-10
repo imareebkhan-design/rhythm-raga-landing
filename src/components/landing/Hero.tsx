@@ -76,27 +76,15 @@ export function Hero() {
 
   const active = DISCIPLINES[index];
 
-  // Progress + auto-advance loop
+  // Auto-advance loop
   useEffect(() => {
-    if (!playing) return;
-    startRef.current = performance.now() - progress * CYCLE_MS;
-
-    const tick = (t: number) => {
-      const elapsed = (t - startRef.current) / CYCLE_MS;
-      if (elapsed >= 1) {
-        setProgress(0);
-        setIndex((i) => (i + 1) % DISCIPLINES.length);
-      } else {
-        setProgress(elapsed);
-        rafRef.current = requestAnimationFrame(tick);
-      }
-    };
-    rafRef.current = requestAnimationFrame(tick);
+    timerRef.current = setTimeout(() => {
+      setIndex((i) => (i + 1) % DISCIPLINES.length);
+    }, CYCLE_MS);
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [playing, index]);
+  }, [index]);
 
   const jumpTo = (i: number) => {
     setProgress(0);
