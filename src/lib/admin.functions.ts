@@ -31,7 +31,7 @@ export const adminListLeads = createServerFn({ method: "GET" })
   .handler(async ({ data, context }) => {
     await assertAdmin(context);
     let q = context.supabase.from("leads").select("*").order("created_at", { ascending: false }).limit(data.limit);
-    if (data.status) q = q.eq("status", data.status);
+    if (data.status) q = q.eq("status", data.status as any);
     const { data: rows, error } = await q;
     if (error) throw new Error(error.message);
     return rows;
