@@ -19,7 +19,7 @@ const bonuses = [
 
 export function Offer() {
   return (
-    <section id="offer" className="gradient-offer relative overflow-hidden py-16 text-primary-foreground md:py-24">
+    <section id="offer" className="gradient-offer relative overflow-hidden py-16 text-ink md:py-24">
       <div aria-hidden className="pointer-events-none absolute top-0 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-gold/15 blur-3xl" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center">
@@ -30,7 +30,7 @@ export function Offer() {
           <h2 className="mt-4 font-display text-3xl font-extrabold sm:text-4xl lg:text-5xl">
             The Grand Launch Celebration
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-primary-foreground/85 sm:text-lg">
+          <p className="mx-auto mt-3 max-w-xl text-muted-foreground sm:text-lg">
             Become one of our founding students and unlock exclusive launch
             benefits — only for early admissions.
           </p>
@@ -47,7 +47,7 @@ export function Offer() {
               </span>
               <p className="mt-4 font-display text-4xl font-extrabold text-gradient-gold">{o.title}</p>
               <p className="mt-1 font-bold">{o.sub}</p>
-              <p className="mt-2 text-sm text-primary-foreground/75">{o.note}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{o.note}</p>
             </div>
           ))}
         </div>
@@ -69,7 +69,7 @@ export function Offer() {
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-center text-sm text-primary-foreground/80">
+          <p className="mt-6 text-center text-sm text-muted-foreground">
             Total bonus value: <s className="opacity-70">₹5,000+</s>{" "}
             <span className="font-extrabold text-gold">Yours free as a founding student</span>
           </p>
@@ -82,7 +82,7 @@ export function Offer() {
           >
             Claim My Launch Offer
           </a>
-          <p className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-foreground/75">
+          <p className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
             <Clock className="h-3.5 w-3.5" aria-hidden />
             Offer ending soon — seats are filling fast
           </p>
