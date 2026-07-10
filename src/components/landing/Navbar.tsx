@@ -5,15 +5,16 @@ import logo from "@/assets/logo-rhythmraga.png";
 export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6 md:h-24">
         <a href="#top" className="flex items-center" aria-label="Rhythm Raga — School of Music and Arts">
           <img
             src={logo}
             alt="Rhythm Raga — School of Music and Arts"
-            className="h-9 w-auto md:h-10"
+            className="h-14 w-auto md:h-20"
             loading="eager"
           />
         </a>
+
 
         <nav className="hidden items-center gap-7 text-sm font-semibold text-muted-foreground md:flex">
           <a href="#courses" className="transition-colors hover:text-foreground">Courses</a>
