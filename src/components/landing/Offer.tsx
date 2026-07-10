@@ -1,4 +1,5 @@
 import { Check, Clock, Flame } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const offers = [
   { tag: "Most Popular", title: "20% OFF", sub: "Your First Month", note: "Start your journey at founding-student pricing." },
@@ -76,12 +77,12 @@ export function Offer() {
         </div>
 
         <div className="mt-8 flex flex-col items-center gap-3">
-          <a
-            href="#book"
+          <Link
+            to="/book"
             className="gradient-cta-btn inline-flex items-center justify-center rounded-full px-10 py-4 text-base font-bold text-cta-foreground shadow-cta transition-transform hover:scale-[1.03]"
           >
             Claim My Launch Offer
-          </a>
+          </Link>
           <p className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
             <Clock className="h-3.5 w-3.5" aria-hidden />
             Offer ending soon — seats are filling fast
