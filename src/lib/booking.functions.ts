@@ -51,16 +51,16 @@ export const submitLead = createServerFn({ method: "POST" })
       _name: data.name,
       _phone: data.phone,
       _whatsapp_ok: data.whatsapp_ok,
-      _age: data.age ?? null,
+      _age: (data.age ?? null) as any,
       _course: data.course,
       _pincode: data.pincode,
       _in_service_area: inServiceArea,
-      _utm_source: data.utm_source ?? null,
-      _utm_medium: data.utm_medium ?? null,
-      _utm_campaign: data.utm_campaign ?? null,
-      _utm_content: data.utm_content ?? null,
-      _gclid: data.gclid ?? null,
-      _fbclid: data.fbclid ?? null,
+      _utm_source: (data.utm_source ?? null) as any,
+      _utm_medium: (data.utm_medium ?? null) as any,
+      _utm_campaign: (data.utm_campaign ?? null) as any,
+      _utm_content: (data.utm_content ?? null) as any,
+      _gclid: (data.gclid ?? null) as any,
+      _fbclid: (data.fbclid ?? null) as any,
     });
 
     if (error || !leadId) {
