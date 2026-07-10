@@ -9,10 +9,13 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary font-display text-lg font-extrabold text-primary-foreground">R</span>
-              <span className="font-display text-lg font-extrabold">Rhythm <span className="text-primary">Raga</span></span>
-            </div>
+            <img
+              src={logo}
+              alt="Rhythm Raga — School of Music and Arts"
+              className="h-12 w-auto md:h-14"
+              loading="lazy"
+            />
+
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
               A premium creative learning academy in GTB Nagar, Delhi. Music,
               dance, and art for kids, teens, and adults — taught by mentors who
