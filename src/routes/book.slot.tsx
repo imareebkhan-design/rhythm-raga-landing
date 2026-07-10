@@ -105,6 +105,14 @@ function PickSlot() {
       title={lead ? `Great, ${lead.name.split(" ")[0]} — pick a time` : "Pick a time"}
       subtitle="Free 30-minute consultation with a senior instructor. Choose any open slot below."
     >
+      {lead && lead.inServiceArea === false && (
+        <div className="mb-6 rounded-2xl border border-primary/30 bg-primary/5 p-4 text-sm">
+          <p className="font-bold text-ink">Your area is outside our 5 km in-person zone.</p>
+          <p className="mt-1 text-muted-foreground">
+            No problem — your free consultation will happen over a phone/video call at the slot you pick below.
+          </p>
+        </div>
+      )}
       {isLoading || !lead ? (
         <div className="flex items-center gap-2 text-muted-foreground">
           <Loader2 className="h-5 w-5 animate-spin" /> Loading available slots…
