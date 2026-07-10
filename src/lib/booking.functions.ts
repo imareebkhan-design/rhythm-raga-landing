@@ -47,32 +47,28 @@ export const submitLead = createServerFn({ method: "POST" })
 
     const inServiceArea = !!pin;
 
-    const leadId = crypto.randomUUID();
-    const insertRow: Database["public"]["Tables"]["leads"]["Insert"] = {
-      id: leadId,
-      name: data.name,
-      phone: data.phone,
-      whatsapp_ok: data.whatsapp_ok,
-      age: data.age ?? null,
-      course: data.course,
-      pincode: data.pincode,
-      in_service_area: inServiceArea,
-      utm_source: data.utm_source ?? null,
-      utm_medium: data.utm_medium ?? null,
-      utm_campaign: data.utm_campaign ?? null,
-      utm_content: data.utm_content ?? null,
-      gclid: data.gclid ?? null,
-      fbclid: data.fbclid ?? null,
-    };
+    const { data: leadId, error } = await supabase.rpc("submit_lead", {
+      _name: data.name,
+      _phone: data.phone,
+      _whatsapp_ok: data.whatsapp_ok,
+      _age: data.age ?? null,
+      _course: data.course,
+      _pincode: data.pincode,
+      _in_service_area: inServiceArea,
+      _utm_source: data.utm_source ?? null,
+      _utm_medium: data.utm_medium ?? null,
+      _utm_campaign: data.utm_campaign ?? null,
+      _utm_content: data.utm_content ?? null,
+      _gclid: data.gclid ?? null,
+      _fbclid: data.fbclid ?? null,
+    });
 
-    const { error } = await supabase.from("leads").insert(insertRow);
-
-    if (error) {
-      console.error("submitLead insert error", JSON.stringify(error));
+    if (error || !leadId) {
+      console.error("submitLead rpc error", JSON.stringify(error));
       throw new Error("Could not save your details. Please try again.");
     }
 
-    return { leadId, inServiceArea };
+    return { leadId: leadId as string, inServiceArea };
   });
 
 /** Fetch open slots for the next N days. Public. */
