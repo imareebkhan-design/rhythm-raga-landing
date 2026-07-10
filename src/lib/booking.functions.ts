@@ -70,7 +70,7 @@ export const submitLead = createServerFn({ method: "POST" })
       .single();
 
     if (error || !lead) {
-      console.error("submitLead insert error", error);
+      console.error("submitLead insert error", JSON.stringify(error));
       throw new Error("Could not save your details. Please try again.");
     }
 
