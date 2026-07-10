@@ -24,7 +24,7 @@ export function Offer() {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center">
           <span className="glass-card inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold tracking-wide uppercase">
-            <Flame className="h-4 w-4 text-gold" aria-hidden />
+            <Flame className="h-4 w-4 text-primary" aria-hidden />
             Limited Launch Seats
           </span>
           <h2 className="mt-4 font-display text-3xl font-extrabold sm:text-4xl lg:text-5xl">
@@ -42,7 +42,7 @@ export function Offer() {
               key={o.title}
               className="glass-card rounded-3xl p-6 text-center transition-transform hover:-translate-y-1"
             >
-              <span className="inline-block rounded-full bg-gold px-3 py-1 text-xs font-extrabold text-gold-foreground uppercase">
+              <span className="inline-block rounded-full bg-gold px-3 py-1 text-xs font-extrabold text-primary-foreground uppercase">
                 {o.tag}
               </span>
               <p className="mt-4 font-display text-4xl font-extrabold text-gradient-gold">{o.title}</p>
@@ -61,17 +61,17 @@ export function Offer() {
               <li key={b} className="flex items-center justify-between gap-3 text-sm sm:text-base">
                 <span className="flex items-center gap-2.5">
                   <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold/20">
-                    <Check className="h-3.5 w-3.5 text-gold" aria-hidden />
+                    <Check className="h-3.5 w-3.5 text-primary" aria-hidden />
                   </span>
                   {b}
                 </span>
-                <span className="shrink-0 text-xs font-bold text-gold sm:text-sm">{v}</span>
+                <span className="shrink-0 text-xs font-bold text-primary sm:text-sm">{v}</span>
               </li>
             ))}
           </ul>
           <p className="mt-6 text-center text-sm text-muted-foreground">
             Total bonus value: <s className="opacity-70">₹5,000+</s>{" "}
-            <span className="font-extrabold text-gold">Yours free as a founding student</span>
+            <span className="font-extrabold text-primary">Yours free as a founding student</span>
           </p>
         </div>
 

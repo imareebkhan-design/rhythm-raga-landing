@@ -89,7 +89,7 @@ export function LeadForm() {
           <ul className="mt-6 space-y-2.5 text-left text-sm sm:text-base">
             {["100% free trial class — no strings attached", "Founding-student launch offers", "Reply within a few hours"].map((t) => (
               <li key={t} className="flex items-center justify-center gap-2.5 lg:justify-start">
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-gold" aria-hidden />
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" aria-hidden />
                 {t}
               </li>
             ))}
@@ -99,7 +99,7 @@ export function LeadForm() {
         <div className="glass-card rounded-3xl p-6 sm:p-8">
           {submitted ? (
             <div className="py-10 text-center">
-              <CheckCircle2 className="mx-auto h-14 w-14 text-gold" aria-hidden />
+              <CheckCircle2 className="mx-auto h-14 w-14 text-primary" aria-hidden />
               <h3 className="mt-4 font-display text-2xl font-extrabold">You're all set.</h3>
               <p className="mt-2 text-muted-foreground">
                 We've opened WhatsApp with your details. Hit send and we'll
