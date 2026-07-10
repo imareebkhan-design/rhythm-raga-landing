@@ -88,11 +88,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Premium music, dance & art classes in GTB Nagar, Delhi. Book your free trial class today.",
+          "Premium music, dance & art classes in GTB Nagar, Delhi. Guitar, Piano, Drums, Singing, Zumba & Creative Art for kids and adults. Free trial class.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Rhythm Raga" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Rhythm Raga — Creative Learning Academy, GTB Nagar Delhi" },
+      { name: "twitter:description", content: "Premium music, dance & art classes in GTB Nagar, Delhi. Guitar, Piano, Drums, Singing, Zumba & Creative Art for kids and adults. Free trial class." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7e967fa9-5311-4cac-9519-5420dbfefb41/id-preview-2d03662b--0dd401a0-dd88-47d5-9232-8d66fb0b246e.lovable.app-1783667136058.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7e967fa9-5311-4cac-9519-5420dbfefb41/id-preview-2d03662b--0dd401a0-dd88-47d5-9232-8d66fb0b246e.lovable.app-1783667136058.png" },
     ],
     links: [
       {
