@@ -1,5 +1,7 @@
 import { MapPin, Phone, MessageCircle, Clock3, Instagram, Facebook, Youtube } from "lucide-react";
 import { ADDRESS, CALL_LINK, PHONE_DISPLAY, WHATSAPP_LINK } from "./constants";
+import logo from "@/assets/logo-rhythmraga.png";
+
 
 export function Footer() {
   return (
