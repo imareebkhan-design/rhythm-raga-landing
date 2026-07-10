@@ -238,47 +238,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Showreel control bar */}
-      <div className="relative mx-auto mt-14 flex max-w-6xl flex-col gap-3 px-4 sm:px-6">
-        <div className="flex items-center gap-4">
-          <button
-            onClick={() => setPlaying((p) => !p)}
-            aria-label={playing ? "Pause showreel" : "Play showreel"}
-            className="glass-card grid h-11 w-11 place-items-center rounded-full transition-colors hover:bg-white/20"
-          >
-            {playing ? <Pause className="h-4 w-4" aria-hidden /> : <Play className="h-4 w-4" aria-hidden />}
-          </button>
-          <button
-            onClick={() => setMuted((m) => !m)}
-            aria-label={muted ? "Unmute" : "Mute"}
-            className="glass-card grid h-11 w-11 place-items-center rounded-full transition-colors hover:bg-white/20"
-          >
-            {muted ? <VolumeX className="h-4 w-4" aria-hidden /> : <Volume2 className="h-4 w-4" aria-hidden />}
-          </button>
-
-          <div className="flex flex-1 items-center gap-3">
-            <span className="font-mono text-xs tabular-nums text-primary-foreground/70">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <div className="relative h-[3px] flex-1 overflow-hidden rounded-full bg-white/15">
-              <div
-                className="absolute inset-y-0 left-0 bg-gold"
-                style={{ width: `${progress * 100}%` }}
-              />
-            </div>
-            <span className="font-mono text-xs tabular-nums text-primary-foreground/70">
-              {String(DISCIPLINES.length).padStart(2, "0")}
-            </span>
-          </div>
-
-          <a
-            href="#courses"
-            className="hidden items-center gap-1.5 text-xs font-bold tracking-wide uppercase text-primary-foreground/80 hover:text-primary-foreground sm:inline-flex"
-          >
-            Scroll <ArrowDown className="h-3.5 w-3.5" aria-hidden />
-          </a>
-        </div>
-      </div>
     </section>
   );
 }
