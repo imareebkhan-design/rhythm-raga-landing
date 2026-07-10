@@ -48,7 +48,7 @@ export const adminUpdateLead = createServerFn({ method: "POST" })
   )
   .handler(async ({ data, context }) => {
     await assertAdmin(context);
-    const patch: Record<string, unknown> = {};
+    const patch: Record<string, any> = {};
     if (data.status) patch.status = data.status;
     if (data.notes !== undefined) patch.notes = data.notes;
     const { error } = await context.supabase.from("leads").update(patch).eq("id", data.id);
