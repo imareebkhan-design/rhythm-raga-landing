@@ -10,11 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookSlotRouteImport } from './routes/book.slot'
+import { Route as BookOutOfAreaRouteImport } from './routes/book.out-of-area'
+import { Route as BookConfirmedRouteImport } from './routes/book.confirmed'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -22,30 +31,77 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookSlotRoute = BookSlotRouteImport.update({
+  id: '/slot',
+  path: '/slot',
+  getParentRoute: () => BookRoute,
+} as any)
+const BookOutOfAreaRoute = BookOutOfAreaRouteImport.update({
+  id: '/out-of-area',
+  path: '/out-of-area',
+  getParentRoute: () => BookRoute,
+} as any)
+const BookConfirmedRoute = BookConfirmedRouteImport.update({
+  id: '/confirmed',
+  path: '/confirmed',
+  getParentRoute: () => BookRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book': typeof BookRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/book/confirmed': typeof BookConfirmedRoute
+  '/book/out-of-area': typeof BookOutOfAreaRoute
+  '/book/slot': typeof BookSlotRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/book': typeof BookRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/book/confirmed': typeof BookConfirmedRoute
+  '/book/out-of-area': typeof BookOutOfAreaRoute
+  '/book/slot': typeof BookSlotRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book': typeof BookRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/book/confirmed': typeof BookConfirmedRoute
+  '/book/out-of-area': typeof BookOutOfAreaRoute
+  '/book/slot': typeof BookSlotRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/book'
+    | '/sitemap.xml'
+    | '/book/confirmed'
+    | '/book/out-of-area'
+    | '/book/slot'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml'
-  id: '__root__' | '/' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/book'
+    | '/sitemap.xml'
+    | '/book/confirmed'
+    | '/book/out-of-area'
+    | '/book/slot'
+  id:
+    | '__root__'
+    | '/'
+    | '/book'
+    | '/sitemap.xml'
+    | '/book/confirmed'
+    | '/book/out-of-area'
+    | '/book/slot'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookRoute: typeof BookRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -58,6 +114,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -65,11 +128,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book/slot': {
+      id: '/book/slot'
+      path: '/slot'
+      fullPath: '/book/slot'
+      preLoaderRoute: typeof BookSlotRouteImport
+      parentRoute: typeof BookRoute
+    }
+    '/book/out-of-area': {
+      id: '/book/out-of-area'
+      path: '/out-of-area'
+      fullPath: '/book/out-of-area'
+      preLoaderRoute: typeof BookOutOfAreaRouteImport
+      parentRoute: typeof BookRoute
+    }
+    '/book/confirmed': {
+      id: '/book/confirmed'
+      path: '/confirmed'
+      fullPath: '/book/confirmed'
+      preLoaderRoute: typeof BookConfirmedRouteImport
+      parentRoute: typeof BookRoute
+    }
   }
 }
 
+interface BookRouteChildren {
+  BookConfirmedRoute: typeof BookConfirmedRoute
+  BookOutOfAreaRoute: typeof BookOutOfAreaRoute
+  BookSlotRoute: typeof BookSlotRoute
+}
+
+const BookRouteChildren: BookRouteChildren = {
+  BookConfirmedRoute: BookConfirmedRoute,
+  BookOutOfAreaRoute: BookOutOfAreaRoute,
+  BookSlotRoute: BookSlotRoute,
+}
+
+const BookRouteWithChildren = BookRoute._addFileChildren(BookRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookRoute: BookRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
