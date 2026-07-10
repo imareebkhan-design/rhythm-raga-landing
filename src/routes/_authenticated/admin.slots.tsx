@@ -99,7 +99,7 @@ function SlotsPage() {
                   <Th>Expert</Th>
                   <Th>Booked</Th>
                   <Th>Active</Th>
-                  <Th></Th>
+                  <Th> </Th>
                 </tr>
               </thead>
               <tbody>
