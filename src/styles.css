@@ -54,9 +54,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  --font-display: "Plus Jakarta Sans", sans-serif;
-  --font-editorial: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Manrope", sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-editorial: "Fraunces", Georgia, serif;
+  --font-sans: "Inter Tight", system-ui, sans-serif;
+
   --color-paper: var(--paper);
   --color-ink: var(--ink);
   --shadow-soft: 0 4px 24px -6px oklch(0.51 0.28 275 / 0.1);
