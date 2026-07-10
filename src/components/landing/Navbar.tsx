@@ -1,18 +1,20 @@
 import { Phone } from "lucide-react";
 import { CALL_LINK } from "./constants";
+import logo from "@/assets/logo-rhythmraga.png";
 
 export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary font-display text-lg font-extrabold text-primary-foreground">
-            R
-          </span>
-          <span className="font-display text-lg font-extrabold tracking-tight">
-            Rhythm <span className="text-primary">Raga</span>
-          </span>
+        <a href="#top" className="flex items-center" aria-label="Rhythm Raga — School of Music and Arts">
+          <img
+            src={logo}
+            alt="Rhythm Raga — School of Music and Arts"
+            className="h-9 w-auto md:h-10"
+            loading="eager"
+          />
         </a>
+
         <nav className="hidden items-center gap-7 text-sm font-semibold text-muted-foreground md:flex">
           <a href="#courses" className="transition-colors hover:text-foreground">Courses</a>
           <a href="#offer" className="transition-colors hover:text-foreground">Launch Offer</a>
