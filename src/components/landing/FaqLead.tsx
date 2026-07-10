@@ -114,7 +114,7 @@ export function LeadForm() {
                 <input
                   id="name" name="name" required maxLength={100} autoComplete="name"
                   placeholder="Your full name"
-                  className="w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none"
+                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -123,7 +123,7 @@ export function LeadForm() {
                   <input
                     id="phone" name="phone" type="tel" required maxLength={15} autoComplete="tel"
                     placeholder="98XXXXXXXX" pattern="[0-9+\s-]{8,15}"
-                    className="w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                   />
                 </div>
                 <div>
@@ -131,7 +131,7 @@ export function LeadForm() {
                   <input
                     id="age" name="age" type="number" min={4} max={99} required
                     placeholder="Age"
-                    className="w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
                   />
                 </div>
               </div>
@@ -139,7 +139,7 @@ export function LeadForm() {
                 <label htmlFor="course" className="mb-1.5 block text-sm font-bold">Course Interested In</label>
                 <select
                   id="course" name="course" required
-                  className="w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-ink focus:border-gold focus:outline-none [&>option]:text-foreground"
+                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none [&>option]:text-foreground"
                 >
                   {courseOptions.map((c) => <option key={c}>{c}</option>)}
                 </select>
@@ -148,7 +148,7 @@ export function LeadForm() {
                 <label htmlFor="timing" className="mb-1.5 block text-sm font-bold">Preferred Timing</label>
                 <select
                   id="timing" name="timing" required
-                  className="w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-ink focus:border-gold focus:outline-none [&>option]:text-foreground"
+                  className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none [&>option]:text-foreground"
                 >
                   {timingOptions.map((t) => <option key={t}>{t}</option>)}
                 </select>
