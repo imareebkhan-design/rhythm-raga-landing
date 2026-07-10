@@ -1,5 +1,6 @@
 import { Phone, ArrowRight, MapPin, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import galleryGuitar from "@/assets/gallery-guitar.jpg";
 import galleryPiano from "@/assets/gallery-piano.jpg";
 import galleryDrums from "@/assets/gallery-drums.jpg";
@@ -101,17 +102,19 @@ export function Hero() {
         <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           Six disciplines. One creative home. Guitar, Piano, Drums, Vocals,
           Zumba &amp; Creative Art — taught by mentors who love what they do.
-          Book your free trial and meet your teacher this week.
+          Book your free consultation and meet your teacher this week.
         </p>
 
+
+
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a
-            href="#book"
+          <Link
+            to="/book"
             className="gradient-cta-btn group inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-cta-foreground shadow-cta transition-transform hover:scale-[1.03] sm:w-auto"
           >
-            Book Your Free Trial
+            Book Free Consultation
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden />
-          </a>
+          </Link>
           <a
             href={CALL_LINK}
             className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border bg-background px-8 py-4 text-base font-semibold text-ink transition-colors hover:bg-accent sm:w-auto"
