@@ -77,14 +77,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Rhythm Raga — Creative Learning Academy, GTB Nagar Delhi" },
+      {
+        name: "description",
+        content:
+          "Premium music, dance & art classes in GTB Nagar, Delhi. Guitar, Piano, Drums, Singing, Zumba & Creative Art for kids and adults. Free trial class.",
+      },
+      { name: "author", content: "Rhythm Raga" },
+      { property: "og:title", content: "Rhythm Raga — Creative Learning Academy, GTB Nagar Delhi" },
+      {
+        property: "og:description",
+        content:
+          "Premium music, dance & art classes in GTB Nagar, Delhi. Book your free trial class today.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Rhythm Raga" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -92,6 +100,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
