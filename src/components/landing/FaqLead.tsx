@@ -100,7 +100,7 @@ export function LeadForm() {
           {submitted ? (
             <div className="py-10 text-center">
               <CheckCircle2 className="mx-auto h-14 w-14 text-gold" aria-hidden />
-              <h3 className="mt-4 font-display text-2xl font-extrabold">You're all set! 🎉</h3>
+              <h3 className="mt-4 font-display text-2xl font-extrabold">You're all set.</h3>
               <p className="mt-2 text-primary-foreground/85">
                 We've opened WhatsApp with your details. Hit send and we'll
                 confirm your free trial slot right away.

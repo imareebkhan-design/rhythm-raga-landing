@@ -28,7 +28,7 @@ export function Offer() {
             Limited Launch Seats
           </span>
           <h2 className="mt-4 font-display text-3xl font-extrabold sm:text-4xl lg:text-5xl">
-            🎉 Grand Launch Celebration
+            The Grand Launch Celebration
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-primary-foreground/85 sm:text-lg">
             Become one of our founding students and unlock exclusive launch
