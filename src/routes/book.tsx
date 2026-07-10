@@ -88,13 +88,14 @@ function BookLead() {
       }
       sessionStorage.setItem(
         "rr_lead",
-        JSON.stringify({ leadId: res.leadId, name: parsed.data.name, course: parsed.data.course }),
+        JSON.stringify({
+          leadId: res.leadId,
+          name: parsed.data.name,
+          course: parsed.data.course,
+          inServiceArea: res.inServiceArea,
+        }),
       );
-      if (!res.inServiceArea) {
-        navigate({ to: "/book/out-of-area" });
-      } else {
-        navigate({ to: "/book/slot" });
-      }
+      navigate({ to: "/book/slot" });
     } catch (err) {
       toast.error((err as Error).message);
       setLoading(false);
