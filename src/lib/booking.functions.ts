@@ -37,15 +37,19 @@ export const submitLead = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const supabase = publicClient();
 
-    // check serviceability
-    const { data: pin } = await supabase
-      .from("serviceable_pincodes")
-      .select("pincode")
-      .eq("pincode", data.pincode)
-      .eq("is_active", true)
-      .maybeSingle();
-
-    const inServiceArea = !!pin;
+    // check serviceability — only when a pincode was collected.
+    // The paid landing-page form (Name/Phone/Instrument) omits it, so we
+    // treat those leads as "not gated" and skip the slot-picker branch.
+    let inServiceArea = false;
+    if (data.pincode) {
+      const { data: pin } = await supabase
+        .from("serviceable_pincodes")
+        .select("pincode")
+        .eq("pincode", data.pincode)
+        .eq("is_active", true)
+        .maybeSingle();
+      inServiceArea = !!pin;
+    }
 
     const { data: leadId, error } = await supabase.rpc("submit_lead", {
       _name: data.name,
@@ -53,7 +57,7 @@ export const submitLead = createServerFn({ method: "POST" })
       _whatsapp_ok: data.whatsapp_ok,
       _age: (data.age ?? null) as any,
       _course: data.course,
-      _pincode: data.pincode,
+      _pincode: (data.pincode ?? null) as any,
       _in_service_area: inServiceArea,
       _utm_source: (data.utm_source ?? null) as any,
       _utm_medium: (data.utm_medium ?? null) as any,

@@ -1,6 +1,6 @@
 import { Phone } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { CALL_LINK } from "./constants";
+import { track, scrollToLeadForm } from "@/lib/analytics";
 import logo from "@/assets/logo-rhythmraga.png";
 
 export function Navbar() {
@@ -16,27 +16,32 @@ export function Navbar() {
           />
         </a>
 
-
         <nav className="hidden items-center gap-7 text-sm font-semibold text-muted-foreground md:flex">
           <a href="#courses" className="transition-colors hover:text-foreground">Courses</a>
-          <a href="#offer" className="transition-colors hover:text-foreground">Launch Offer</a>
+          <a href="#offer" className="transition-colors hover:text-foreground">Offer</a>
           <a href="#why" className="transition-colors hover:text-foreground">Why Us</a>
           <a href="#faq" className="transition-colors hover:text-foreground">FAQ</a>
         </nav>
+
         <div className="flex items-center gap-2">
           <a
             href={CALL_LINK}
+            onClick={() => track("call_click", { context: "navbar" })}
             className="hidden items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-semibold transition-colors hover:bg-accent sm:inline-flex"
           >
             <Phone className="h-4 w-4" aria-hidden />
             Call Now
           </a>
-          <Link
-            to="/book"
+          <button
+            type="button"
+            onClick={() => {
+              track("hero_cta_click", { context: "navbar" });
+              scrollToLeadForm();
+            }}
             className="gradient-cta-btn inline-flex items-center rounded-full px-4 py-2 text-sm font-bold text-cta-foreground shadow-cta transition-transform hover:scale-[1.03] sm:px-5"
           >
-            Book Free Consult
-          </Link>
+            Book Free Trial
+          </button>
         </div>
       </div>
     </header>

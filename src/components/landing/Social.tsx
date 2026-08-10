@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_LINK } from "./constants";
 import galleryGuitar from "@/assets/gallery-guitar.jpg";
 import galleryPiano from "@/assets/gallery-piano.jpg";
 import galleryDrums from "@/assets/gallery-drums.jpg";
@@ -27,7 +28,7 @@ export function Gallery() {
             Inside The Academy
           </span>
           <h2 className="mt-4 font-display text-3xl font-extrabold sm:text-4xl">
-            Where Creativity Comes Alive
+            See What Learning Here Looks Like
           </h2>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-3">
@@ -82,11 +83,21 @@ export function Testimonials() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center">
           <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-            Loved by Students & Parents
+            What Our Students Say
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-muted-foreground sm:text-lg">
-            Real stories from the Rhythm Raga community.
-          </p>
+          <a
+            href={GOOGLE_REVIEWS_LINK}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-bold shadow-soft transition-colors hover:border-primary/40"
+          >
+            <span className="flex gap-0.5" aria-hidden>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+              ))}
+            </span>
+            Rated {GOOGLE_RATING} on Google · {GOOGLE_REVIEW_COUNT} reviews
+          </a>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {testimonials.map((t) => (

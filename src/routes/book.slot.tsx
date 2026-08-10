@@ -176,7 +176,7 @@ function PickSlot() {
 
 function EmptyState() {
   const waHref =
-    "https://wa.me/919999999999?text=" +
+    "https://wa.me/918796574448?text=" +
     encodeURIComponent("Hi Rhythm Raga, I filled the consultation form but no slots are open — can we set a time?");
   return (
     <div className="rounded-3xl border border-border bg-muted/30 p-8 text-center">

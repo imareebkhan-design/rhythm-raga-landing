@@ -1,5 +1,6 @@
 import { MapPin, Phone, MessageCircle, Clock3, Instagram, Facebook, Youtube } from "lucide-react";
-import { ADDRESS, CALL_LINK, PHONE_DISPLAY, WHATSAPP_LINK } from "./constants";
+import { ADDRESS, CALL_LINK, CALL_LINK_2, PHONE_DISPLAY, PHONE_2_DISPLAY, WHATSAPP_LINK, MAPS_LINK, MAPS_EMBED } from "./constants";
+import { track, scrollToLeadForm } from "@/lib/analytics";
 import logo from "@/assets/logo-rhythmraga.png";
 
 
@@ -43,18 +44,46 @@ export function Footer() {
           <div>
             <h3 className="font-display text-sm font-extrabold tracking-wide uppercase">Contact</h3>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
-                {ADDRESS}
+              <li>
+                <a
+                  href={MAPS_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => track("call_click", { context: "footer_map" })}
+                  className="flex items-start gap-2.5 transition-colors hover:text-primary"
+                >
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                  {ADDRESS}
+                </a>
               </li>
               <li>
-                <a href={CALL_LINK} className="flex items-center gap-2.5 transition-colors hover:text-primary">
+                <a
+                  href={CALL_LINK}
+                  onClick={() => track("call_click", { context: "footer" })}
+                  className="flex items-center gap-2.5 transition-colors hover:text-primary"
+                >
                   <Phone className="h-4 w-4 shrink-0 text-primary" aria-hidden />
                   {PHONE_DISPLAY}
                 </a>
               </li>
               <li>
-                <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="flex items-center gap-2.5 transition-colors hover:text-primary">
+                <a
+                  href={CALL_LINK_2}
+                  onClick={() => track("call_click", { context: "footer_2" })}
+                  className="flex items-center gap-2.5 transition-colors hover:text-primary"
+                >
+                  <Phone className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+                  {PHONE_2_DISPLAY}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => track("whatsapp_click", { context: "footer" })}
+                  className="flex items-center gap-2.5 transition-colors hover:text-primary"
+                >
                   <MessageCircle className="h-4 w-4 shrink-0 text-primary" aria-hidden />
                   WhatsApp Us
                 </a>
@@ -67,19 +96,24 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2.5">
                 <Clock3 className="h-4 w-4 shrink-0 text-primary" aria-hidden />
-                Mon – Sat: 10 AM – 8 PM
+                Open daily: 11 AM – 9 PM
               </li>
-              <li className="pl-6.5">Sunday: 10 AM – 2 PM</li>
+              <li className="pl-6.5">Monday – Sunday</li>
             </ul>
           </div>
         </div>
 
-        {/* Google Maps placeholder — replace src with real embed once listing is live */}
-        <div className="mt-10 grid h-48 place-items-center rounded-3xl border border-dashed border-border bg-muted text-sm font-semibold text-muted-foreground">
-          <span className="inline-flex items-center gap-2">
-            <MapPin className="h-4 w-4" aria-hidden />
-            Google Maps — GTB Nagar, Delhi (embed coming soon)
-          </span>
+        {/* Google Maps embed — Rhytthm Raga, GTB Nagar Metro Station */}
+        <div className="mt-10 overflow-hidden rounded-3xl border border-border">
+          <iframe
+            title="Rhytthm Raga location on Google Maps"
+            src={MAPS_EMBED}
+            className="h-64 w-full"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
         </div>
 
         <p className="mt-8 text-center text-xs text-muted-foreground">
@@ -97,6 +131,7 @@ export function StickyCta() {
         <a
           href={CALL_LINK}
           aria-label="Call Rhythm Raga"
+          onClick={() => track("call_click", { context: "sticky" })}
           className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-border bg-card"
         >
           <Phone className="h-5 w-5 text-primary" aria-hidden />
@@ -106,16 +141,21 @@ export function StickyCta() {
           target="_blank"
           rel="noreferrer"
           aria-label="WhatsApp Rhythm Raga"
+          onClick={() => track("whatsapp_click", { context: "sticky" })}
           className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-border bg-card"
         >
           <MessageCircle className="h-5 w-5 text-primary" aria-hidden />
         </a>
-        <a
-          href="#book"
+        <button
+          type="button"
+          onClick={() => {
+            track("mobile_sticky_cta_click", {});
+            scrollToLeadForm();
+          }}
           className="gradient-cta-btn flex h-12 flex-1 items-center justify-center rounded-full text-sm font-bold text-cta-foreground shadow-cta"
         >
-          Book Free Trial Class
-        </a>
+          Book My Free Trial
+        </button>
       </div>
     </div>
   );

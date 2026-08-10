@@ -3,9 +3,9 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { Offer } from "@/components/landing/Offer";
 import { Courses } from "@/components/landing/Courses";
-import { PainPoints, Benefits, WhyUs, WhoCanJoin, HowItWorks } from "@/components/landing/Sections";
+import { Trust, Benefits, WhoItsFor, Objections, HowItWorks } from "@/components/landing/Sections";
 import { Gallery, Testimonials } from "@/components/landing/Social";
-import { Faq, LeadForm } from "@/components/landing/FaqLead";
+import { Faq, LeadFormSection } from "@/components/landing/FaqLead";
 import { Footer, StickyCta } from "@/components/landing/Footer";
 import { FAQS } from "@/components/landing/constants";
 
@@ -33,13 +33,20 @@ export const Route = createFileRoute("/")({
           description: DESCRIPTION,
           address: {
             "@type": "PostalAddress",
+            streetAddress: "Gate 4, GTB Nagar Metro Station, 2529 Basement",
             addressLocality: "GTB Nagar",
             addressRegion: "Delhi",
+            postalCode: "110009",
             addressCountry: "IN",
           },
-          telephone: "+91-9999999999",
-          openingHours: ["Mo-Sa 10:00-20:00", "Su 10:00-14:00"],
+          telephone: "+91-8796574448",
+          openingHours: ["Mo-Su 11:00-21:00"],
           priceRange: "₹₹",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "5.0",
+            reviewCount: "12",
+          },
         }),
       },
       {
@@ -64,17 +71,17 @@ function Index() {
     <main>
       <Navbar />
       <Hero />
-      <Offer />
+      <Trust />
       <Courses />
-      <PainPoints />
       <Benefits />
-      <WhyUs />
-      <WhoCanJoin />
+      <WhoItsFor />
+      <Objections />
+      <Offer />
       <HowItWorks />
       <Gallery />
       <Testimonials />
       <Faq />
-      <LeadForm />
+      <LeadFormSection />
       <Footer />
       <StickyCta />
     </main>

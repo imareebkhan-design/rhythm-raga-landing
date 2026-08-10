@@ -5,7 +5,7 @@ import { CheckCircle2, Calendar, MessageCircle, MapPin } from "lucide-react";
 import { BookingShell } from "@/components/booking/BookingShell";
 import { buildIcs, downloadIcs } from "@/lib/ics";
 
-const WHATSAPP_NUMBER = "919999999999"; // TODO: update to real academy number
+const WHATSAPP_NUMBER = "918796574448"; // TODO: update to real academy number
 
 export const Route = createFileRoute("/book/confirmed")({
   head: () => ({
@@ -57,7 +57,7 @@ function Confirmed() {
     const ics = buildIcs({
       uid: b.bookingId,
       title: "Rhythm Raga — Free Consultation",
-      description: `Consultation with ${b.slot!.expert_name}. Course interest: ${b.lead!.course}. Contact: +91-99999-99999.`,
+      description: `Consultation with ${b.slot!.expert_name}. Course interest: ${b.lead!.course}. Contact: +91-8796574448.`,
       location: "Rhythm Raga, GTB Nagar, Delhi",
       startsAt: b.slot!.starts_at,
       endsAt: b.slot!.ends_at,

@@ -1,51 +1,172 @@
 import {
-  GraduationCap, Hand, Users, Clock3, Mic2, Baby, Leaf, Palette, Heart,
-  Sparkles, Smile, Brain, Music4, UsersRound, Drama, Activity, Star, Trophy,
+  GraduationCap, MapPin, Sparkles, Users, Music4, CheckCircle2,
+  Baby, UsersRound, Star, Trophy,
 } from "lucide-react";
+import { track, scrollToLeadForm } from "@/lib/analytics";
 
-/* ---------- Pain Points ---------- */
+function PrimaryCta({ label = "Book My Free Trial", context }: { label?: string; context: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        track("hero_cta_click", { context });
+        scrollToLeadForm();
+      }}
+      className="gradient-cta-btn inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-bold text-cta-foreground shadow-cta transition-transform hover:scale-[1.03]"
+    >
+      {label}
+    </button>
+  );
+}
 
-const pains = [
+/* ---------- Trust / Social proof (moved near the top) ---------- */
+
+const trustItems = [
+  { icon: Users, label: "100+ Students" },
+  { icon: GraduationCap, label: "Expert Mentors" },
+  { icon: MapPin, label: "Offline Academy" },
+  { icon: Sparkles, label: "Beginner-Friendly" },
+  { icon: Music4, label: "6 Disciplines" },
+];
+
+export function Trust() {
+  return (
+    <section id="why" className="scroll-mt-24 border-y border-border bg-muted/40 py-10 md:py-12">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <h2 className="text-center font-display text-2xl font-extrabold sm:text-3xl">
+          Why Students Choose Us
+        </h2>
+        <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-10">
+          {trustItems.map((t) => (
+            <li key={t.label} className="inline-flex items-center gap-2.5 text-sm font-bold sm:text-base">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-primary/10">
+                <t.icon className="h-5 w-5 text-primary" aria-hidden />
+              </span>
+              {t.label}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Benefits — outcome-driven ---------- */
+
+const benefits = [
+  "Learn with a clear, structured approach",
+  "Guidance from experienced mentors",
+  "Practice in a real academy environment",
+  "Build confidence while you learn",
+  "Go at your own pace as a beginner",
+  "Develop consistency and discipline",
+  "Turn interest into an actual skill",
+  "Build a foundation you can keep growing",
+];
+
+export function Benefits() {
+  return (
+    <section className="py-16 md:py-24">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <div className="text-center">
+          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
+            More Than Just Music Classes
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-muted-foreground sm:text-lg">
+            What you actually walk away with after a few months at Rhythm Raga.
+          </p>
+        </div>
+        <ul className="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+          {benefits.map((b) => (
+            <li key={b} className="flex items-start gap-3 text-sm sm:text-base">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
+              <span className="text-foreground">{b}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Who it's for (compact) ---------- */
+
+const audiences = [
+  { icon: Sparkles, label: "Complete Beginners" },
+  { icon: Baby, label: "Kids" },
+  { icon: Users, label: "Teenagers" },
+  { icon: UsersRound, label: "Adults" },
+  { icon: Star, label: "Hobby Learners" },
+  { icon: Trophy, label: "Aspiring Performers" },
+];
+
+export function WhoItsFor() {
+  return (
+    <section className="bg-muted py-16 md:py-20">
+      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+        <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
+          You Don&rsquo;t Need To Be &ldquo;Musical&rdquo; To Start.
+        </h2>
+        <p className="mx-auto mt-3 max-w-xl text-muted-foreground sm:text-lg">
+          Whether you&rsquo;re picking up an instrument for the first time or finally getting
+          serious about a skill you&rsquo;ve always wanted, you can start here.
+        </p>
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {audiences.map((a) => (
+            <div
+              key={a.label}
+              className="flex items-center gap-2.5 rounded-2xl border border-border bg-card px-4 py-3 text-left text-sm font-bold shadow-soft"
+            >
+              <a.icon className="h-4.5 w-4.5 shrink-0 text-primary" aria-hidden />
+              {a.label}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Objection handling ---------- */
+
+const objections = [
   {
-    pain: "\u201CI've always wanted to learn, but never started.\u201D",
-    fix: "That's exactly why the first class is free. No commitment, no pressure — just walk in and try.",
+    q: "“I’ve never played before.”",
+    a: "That’s exactly where beginners should start. Our classes build your foundation step by step.",
   },
   {
-    pain: "\u201CMy child starts hobbies, then loses interest.\u201D",
-    fix: "Our mentors make every class hands-on and fun, with mini-performances that keep kids excited to come back.",
+    q: "“I’m not naturally musical.”",
+    a: "You don’t need to be. Rhythm, technique and confidence are developed through practice and guidance.",
   },
   {
-    pain: "\u201CI don't have enough time.\u201D",
-    fix: "Morning, evening, and weekend batches — pick timings that fit around school, college, or office.",
+    q: "“I don’t know which class is right for me.”",
+    a: "Tell us what you’re interested in and we’ll help you figure out the best starting point.",
   },
   {
-    pain: "\u201CI've never touched an instrument before.\u201D",
-    fix: "Perfect. Beginners are our specialty. We provide the instruments and start from absolute zero.",
+    q: "“I’m worried I’ll lose interest.”",
+    a: "Start with a free trial and experience the class before making any commitment.",
   },
   {
-    pain: "\u201CI'm too old to start now.\u201D",
-    fix: "Our adult learners say the same thing — until week three. Creativity has no age limit, and neither do our batches.",
+    q: "“I have a busy schedule.”",
+    a: "Speak to our team about the available class options and find a schedule that works for you.",
   },
 ];
 
-export function PainPoints() {
+export function Objections() {
   return (
-    <section className="bg-muted py-16 md:py-24">
+    <section className="py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="text-center">
           <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-            Sound Familiar?
+            Thinking You&rsquo;re Not Ready Yet?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-muted-foreground sm:text-lg">
-            Every excuse that's kept you from starting — handled.
-          </p>
         </div>
         <div className="mt-10 space-y-4">
-          {pains.map((p) => (
-            <div key={p.pain} className="rounded-3xl border border-border bg-card p-5 shadow-soft sm:p-6">
-              <p className="font-display text-base font-extrabold text-foreground sm:text-lg">{p.pain}</p>
+          {objections.map((o) => (
+            <div key={o.q} className="rounded-3xl border border-border bg-card p-5 shadow-soft sm:p-6">
+              <p className="font-display text-base font-extrabold text-foreground sm:text-lg">{o.q}</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                <span className="font-bold text-primary">→ </span>{p.fix}
+                <span className="font-bold text-primary">→ </span>{o.a}
               </p>
             </div>
           ))}
@@ -55,129 +176,12 @@ export function PainPoints() {
   );
 }
 
-/* ---------- Benefits ---------- */
-
-const benefits = [
-  { icon: Star, label: "Build confidence" },
-  { icon: Leaf, label: "Reduce stress" },
-  { icon: Sparkles, label: "Boost creativity" },
-  { icon: Brain, label: "Improve focus" },
-  { icon: Music4, label: "Learn practical skills" },
-  { icon: UsersRound, label: "Make new friends" },
-  { icon: Drama, label: "Express yourself" },
-  { icon: Activity, label: "Stay active" },
-  { icon: Mic2, label: "Perform confidently" },
-  { icon: Smile, label: "Enjoy a healthy hobby" },
-];
-
-export function Benefits() {
-  return (
-    <section className="py-16 md:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="text-center">
-          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-            More Than Skills. A Transformation.
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-muted-foreground sm:text-lg">
-            What students walk away with after a few months at Rhythm Raga.
-          </p>
-        </div>
-        <ul className="mt-10 flex flex-wrap justify-center gap-3">
-          {benefits.map((b) => (
-            <li
-              key={b.label}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-bold shadow-soft transition-transform hover:-translate-y-0.5 hover:border-primary/40"
-            >
-              <b.icon className="h-4 w-4 text-primary" aria-hidden />
-              {b.label}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- Why Rhythm Raga ---------- */
-
-const reasons = [
-  { icon: GraduationCap, title: "Professional Mentors", desc: "Learn from performers and trained educators who love teaching." },
-  { icon: Hand, title: "Practical Learning", desc: "You play, sing, dance, and create from your very first class." },
-  { icon: Users, title: "Small Batches", desc: "Personal attention in every session — never lost in a crowd." },
-  { icon: Clock3, title: "Flexible Timings", desc: "Morning, evening, and weekend batches for every schedule." },
-  { icon: Mic2, title: "Performance Opportunities", desc: "Showcases and recitals that build real stage confidence." },
-  { icon: Baby, title: "Kids & Adults Welcome", desc: "Age-appropriate batches from 5 years to 65+." },
-  { icon: Leaf, title: "Beginner Friendly", desc: "Zero experience needed. We start from the absolute basics." },
-  { icon: Palette, title: "Creative Environment", desc: "A bright, inspiring space designed for artists — not a tuition center." },
-  { icon: Heart, title: "Personal Attention", desc: "Progress tracking and personalized feedback for every student." },
-];
-
-export function WhyUs() {
-  return (
-    <section id="why" className="bg-muted py-16 md:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="text-center">
-          <span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-bold tracking-wide text-accent-foreground uppercase">
-            Why Rhythm Raga
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold sm:text-4xl">
-            An Academy Built Around You
-          </h2>
-        </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {reasons.map((r) => (
-            <div
-              key={r.title}
-              className="rounded-3xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card"
-            >
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10">
-                <r.icon className="h-6 w-6 text-primary" aria-hidden />
-              </span>
-              <h3 className="mt-4 font-display text-lg font-extrabold">{r.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{r.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- Who Can Join ---------- */
-
-const joiners = [
-  "Kids", "Teenagers", "College Students", "Working Professionals",
-  "Adults", "Beginners", "Hobby Learners", "Future Performers",
-];
-
-export function WhoCanJoin() {
-  return (
-    <section className="py-16 md:py-20">
-      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-        <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-          Who Can Join? <span className="text-primary">Everyone.</span>
-        </h2>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          {joiners.map((j) => (
-            <span
-              key={j}
-              className="rounded-full bg-primary/10 px-5 py-2.5 text-sm font-bold text-primary"
-            >
-              {j}
-            </span>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- How It Works ---------- */
+/* ---------- How it works ---------- */
 
 const steps = [
-  { n: "1", title: "Book Your Free Trial", desc: "Fill the 30-second form or WhatsApp us. Pick your course and preferred timing." },
-  { n: "2", title: "Visit Rhythm Raga", desc: "Meet your mentor at our GTB Nagar academy and experience a full class — free." },
-  { n: "3", title: "Start Your Creative Journey", desc: "Love it? Claim your launch offer and lock in founding-student benefits." },
+  { n: "1", title: "Tell Us What You Want To Learn", desc: "Submit the short form — it takes less than a minute." },
+  { n: "2", title: "Visit The Academy", desc: "Speak with the team and experience the environment." },
+  { n: "3", title: "Start Learning", desc: "Choose the right class and begin your free trial." },
 ];
 
 export function HowItWorks() {
@@ -185,9 +189,7 @@ export function HowItWorks() {
     <section className="bg-muted py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="text-center">
-          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-            From Curious to Creating in 3 Steps
-          </h2>
+          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">Starting Is Easy</h2>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {steps.map((s, i) => (
@@ -206,13 +208,7 @@ export function HowItWorks() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <a
-            href="#book"
-            className="gradient-cta-btn inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-bold text-cta-foreground shadow-cta transition-transform hover:scale-[1.03]"
-          >
-            <Trophy className="h-5 w-5" aria-hidden />
-            Start Step 1 — Book Free Trial
-          </a>
+          <PrimaryCta context="how_it_works" />
         </div>
       </div>
     </section>
