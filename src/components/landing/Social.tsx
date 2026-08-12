@@ -5,7 +5,7 @@ import galleryPiano from "@/assets/gallery-piano.jpg";
 import galleryDrums from "@/assets/gallery-drums.jpg";
 import galleryVocal from "@/assets/gallery-vocal.jpg";
 import galleryZumba from "@/assets/gallery-zumba.jpg";
-import galleryArt from "@/assets/gallery-art.jpg";
+import galleryFlute from "@/assets/gallery-flute.jpg";
 
 /* ---------- Gallery ---------- */
 /* Placeholder imagery — replace with real academy photos when available. */
@@ -16,7 +16,7 @@ const gallery = [
   { src: galleryDrums, label: "Drum Classes", alt: "Teen playing a drum kit during drum class" },
   { src: galleryVocal, label: "Vocal Training", alt: "Student singing into a microphone during vocal training" },
   { src: galleryZumba, label: "Zumba", alt: "Energetic Zumba dance fitness class in a bright studio" },
-  { src: galleryArt, label: "Creative Art", alt: "Kids painting colorful artwork in creative art class" },
+  { src: galleryFlute, label: "Flute Classes", alt: "Indian musician playing the flute in traditional attire" },
 ];
 
 export function Gallery() {

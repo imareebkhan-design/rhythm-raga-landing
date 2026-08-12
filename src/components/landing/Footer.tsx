@@ -1,24 +1,24 @@
 import { MapPin, Phone, MessageCircle, Clock3, Instagram, Facebook, Youtube } from "lucide-react";
 import { ADDRESS, CALL_LINK, CALL_LINK_2, PHONE_DISPLAY, PHONE_2_DISPLAY, WHATSAPP_LINK, MAPS_LINK, MAPS_EMBED } from "./constants";
 import { track, scrollToLeadForm } from "@/lib/analytics";
-import logo from "@/assets/logo-rhythmraga.png";
+import logo from "@/assets/logo-white.png";
 
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-card pb-24 md:pb-0">
+    <footer className="border-t border-white/10 bg-ink pb-24 md:pb-0">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <img
               src={logo}
               alt="Rhythm Raga — School of Music and Arts"
-              className="h-20 w-auto md:h-24"
+              className="h-14 w-auto md:h-16"
               loading="lazy"
             />
 
 
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/60">
               A premium creative learning academy in GTB Nagar, Delhi. Music,
               dance, and art for kids, teens, and adults — taught by mentors who
               care.
@@ -33,7 +33,7 @@ export function Footer() {
                   key={s.label}
                   href="#top"
                   aria-label={s.label}
-                  className="grid h-10 w-10 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-accent hover:text-primary"
+                  className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white/70 transition-colors hover:bg-white/10 hover:text-gold"
                 >
                   <s.icon className="h-4.5 w-4.5" aria-hidden />
                 </a>
@@ -42,17 +42,17 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-sm font-extrabold tracking-wide uppercase">Contact</h3>
-            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+            <h3 className="font-display text-sm font-extrabold tracking-wide text-white uppercase">Contact</h3>
+            <ul className="mt-4 space-y-3 text-sm text-white/70">
               <li>
                 <a
                   href={MAPS_LINK}
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => track("call_click", { context: "footer_map" })}
-                  className="flex items-start gap-2.5 transition-colors hover:text-primary"
+                  className="flex items-start gap-2.5 transition-colors hover:text-gold"
                 >
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
                   {ADDRESS}
                 </a>
               </li>
@@ -60,9 +60,9 @@ export function Footer() {
                 <a
                   href={CALL_LINK}
                   onClick={() => track("call_click", { context: "footer" })}
-                  className="flex items-center gap-2.5 transition-colors hover:text-primary"
+                  className="flex items-center gap-2.5 transition-colors hover:text-gold"
                 >
-                  <Phone className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+                  <Phone className="h-4 w-4 shrink-0 text-gold" aria-hidden />
                   {PHONE_DISPLAY}
                 </a>
               </li>
@@ -70,9 +70,9 @@ export function Footer() {
                 <a
                   href={CALL_LINK_2}
                   onClick={() => track("call_click", { context: "footer_2" })}
-                  className="flex items-center gap-2.5 transition-colors hover:text-primary"
+                  className="flex items-center gap-2.5 transition-colors hover:text-gold"
                 >
-                  <Phone className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+                  <Phone className="h-4 w-4 shrink-0 text-gold" aria-hidden />
                   {PHONE_2_DISPLAY}
                 </a>
               </li>
@@ -82,9 +82,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => track("whatsapp_click", { context: "footer" })}
-                  className="flex items-center gap-2.5 transition-colors hover:text-primary"
+                  className="flex items-center gap-2.5 transition-colors hover:text-gold"
                 >
-                  <MessageCircle className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+                  <MessageCircle className="h-4 w-4 shrink-0 text-gold" aria-hidden />
                   WhatsApp Us
                 </a>
               </li>
@@ -92,10 +92,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display text-sm font-extrabold tracking-wide uppercase">Business Hours</h3>
-            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            <h3 className="font-display text-sm font-extrabold tracking-wide text-white uppercase">Business Hours</h3>
+            <ul className="mt-4 space-y-2 text-sm text-white/70">
               <li className="flex items-center gap-2.5">
-                <Clock3 className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+                <Clock3 className="h-4 w-4 shrink-0 text-gold" aria-hidden />
                 Open daily: 11 AM – 9 PM
               </li>
               <li className="pl-6.5">Monday – Sunday</li>
@@ -103,10 +103,10 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Google Maps embed — Rhytthm Raga, GTB Nagar Metro Station */}
-        <div className="mt-10 overflow-hidden rounded-3xl border border-border">
+        {/* Google Maps embed — Rhythm Raga, GTB Nagar Metro Station */}
+        <div className="mt-10 overflow-hidden rounded-3xl border border-white/10">
           <iframe
-            title="Rhytthm Raga location on Google Maps"
+            title="Rhythm Raga location on Google Maps"
             src={MAPS_EMBED}
             className="h-64 w-full"
             style={{ border: 0 }}
@@ -116,7 +116,7 @@ export function Footer() {
           />
         </div>
 
-        <p className="mt-8 text-center text-xs text-muted-foreground">
+        <p className="mt-8 text-center text-xs text-white/45">
           © {new Date().getFullYear()} Rhythm Raga Creative Learning Academy. All rights reserved.
         </p>
       </div>

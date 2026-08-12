@@ -74,7 +74,15 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
+  head: () => {
+    // Absolute OG/Twitter image needs the production origin. Set VITE_SITE_URL
+    // (e.g. https://rhythmraga.com) to serve the branded card at /og-rhythmraga.png.
+    // Until then, fall back to the existing image so social previews keep working.
+    const SITE_URL = ((import.meta.env as Record<string, string | undefined>).VITE_SITE_URL ?? "").replace(/\/+$/, "");
+    const OG_IMAGE = SITE_URL
+      ? `${SITE_URL}/og-rhythmraga.png`
+      : "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7e967fa9-5311-4cac-9519-5420dbfefb41/id-preview-2d03662b--0dd401a0-dd88-47d5-9232-8d66fb0b246e.lovable.app-1783667136058.png";
+    return {
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -96,8 +104,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Rhythm Raga — Creative Learning Academy, GTB Nagar Delhi" },
       { name: "twitter:description", content: "Premium music, dance & art classes in GTB Nagar, Delhi. Guitar, Piano, Drums, Singing, Zumba & Creative Art for kids and adults. Free trial class." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7e967fa9-5311-4cac-9519-5420dbfefb41/id-preview-2d03662b--0dd401a0-dd88-47d5-9232-8d66fb0b246e.lovable.app-1783667136058.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7e967fa9-5311-4cac-9519-5420dbfefb41/id-preview-2d03662b--0dd401a0-dd88-47d5-9232-8d66fb0b246e.lovable.app-1783667136058.png" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       {
@@ -105,6 +113,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { rel: "icon", href: "/favicon-16.png", type: "image/png", sizes: "16x16" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon-180.png", sizes: "180x180" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -112,7 +123,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap",
       },
     ],
-  }),
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
