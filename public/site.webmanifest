@@ -1,0 +1,14 @@
+{
+  "name": "RhythmRaga — School of Music and Arts",
+  "short_name": "RhythmRaga",
+  "description": "Music institute in GTB Nagar, Delhi. Guitar, piano, drums, vocals and more for kids and adults.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/apple-touch-icon-180.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}

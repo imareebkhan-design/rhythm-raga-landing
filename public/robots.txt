@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://rhytthmraga.com/sitemap.xml

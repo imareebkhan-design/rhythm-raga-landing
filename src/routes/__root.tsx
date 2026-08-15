@@ -11,7 +11,8 @@ import { useEffect, type ReactNode } from "react";
 import { Toaster } from "sonner";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportError } from "../lib/error-reporting";
+import { absoluteUrl } from "../lib/site";
 
 function NotFoundComponent() {
   return (
@@ -39,7 +40,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -75,54 +76,51 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => {
-    // Absolute OG/Twitter image needs the production origin. Set VITE_SITE_URL
-    // (e.g. https://rhythmraga.com) to serve the branded card at /og-rhythmraga.png.
-    // Until then, fall back to the existing image so social previews keep working.
-    const SITE_URL = ((import.meta.env as Record<string, string | undefined>).VITE_SITE_URL ?? "").replace(/\/+$/, "");
-    const OG_IMAGE = SITE_URL
-      ? `${SITE_URL}/og-rhythmraga.png`
-      : "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7e967fa9-5311-4cac-9519-5420dbfefb41/id-preview-2d03662b--0dd401a0-dd88-47d5-9232-8d66fb0b246e.lovable.app-1783667136058.png";
+    // Brand default metadata. Indexable pages (e.g. the home route) override
+    // title/description/og/canonical; utility pages inherit these defaults.
+    const OG_IMAGE = absoluteUrl("/og-rhythmraga.png");
+    const DEFAULT_TITLE = "RhythmRaga — Music Institute in GTB Nagar, Delhi";
+    const DEFAULT_DESC =
+      "RhythmRaga is a music institute in GTB Nagar, Delhi offering guitar, piano, drums, vocals and more for kids and adults. Book a free trial class.";
     return {
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Rhythm Raga — Creative Learning Academy, GTB Nagar Delhi" },
-      {
-        name: "description",
-        content:
-          "Premium music, dance & art classes in GTB Nagar, Delhi. Guitar, Piano, Drums, Singing, Zumba & Creative Art for kids and adults. Free trial class.",
-      },
-      { name: "author", content: "Rhythm Raga" },
-      { property: "og:title", content: "Rhythm Raga — Creative Learning Academy, GTB Nagar Delhi" },
-      {
-        property: "og:description",
-        content:
-          "Premium music, dance & art classes in GTB Nagar, Delhi. Guitar, Piano, Drums, Singing, Zumba & Creative Art for kids and adults. Free trial class.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Rhythm Raga" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Rhythm Raga — Creative Learning Academy, GTB Nagar Delhi" },
-      { name: "twitter:description", content: "Premium music, dance & art classes in GTB Nagar, Delhi. Guitar, Piano, Drums, Singing, Zumba & Creative Art for kids and adults. Free trial class." },
-      { property: "og:image", content: OG_IMAGE },
-      { name: "twitter:image", content: OG_IMAGE },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "icon", href: "/favicon-32.png", type: "image/png", sizes: "32x32" },
-      { rel: "icon", href: "/favicon-16.png", type: "image/png", sizes: "16x16" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon-180.png", sizes: "180x180" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap",
-      },
-    ],
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: DEFAULT_TITLE },
+        { name: "description", content: DEFAULT_DESC },
+        { name: "author", content: "RhythmRaga" },
+        { name: "theme-color", content: "#ffffff" },
+        { property: "og:title", content: DEFAULT_TITLE },
+        { property: "og:description", content: DEFAULT_DESC },
+        { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "RhythmRaga" },
+        { property: "og:locale", content: "en_IN" },
+        { property: "og:image", content: OG_IMAGE },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: "RhythmRaga — School of Music and Arts" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: DEFAULT_TITLE },
+        { name: "twitter:description", content: DEFAULT_DESC },
+        { name: "twitter:image", content: OG_IMAGE },
+      ],
+      links: [
+        {
+          rel: "stylesheet",
+          href: appCss,
+        },
+        { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+        { rel: "icon", href: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+        { rel: "icon", href: "/favicon-16.png", type: "image/png", sizes: "16x16" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon-180.png", sizes: "180x180" },
+        { rel: "manifest", href: "/site.webmanifest" },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap",
+        },
+      ],
     };
   },
   shellComponent: RootShell,
