@@ -123,6 +123,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       ],
       scripts: [
         {
+          id: "Cookiebot",
+          src: "https://consent.cookiebot.com/uc.js",
+          "data-cbid": "cfd1f8aa-300d-4b55-b7bf-5a3ebc108fe0",
+          type: "text/javascript",
+          async: true,
+        },
+        {
           src: "https://www.googletagmanager.com/gtag/js?id=AW-18326020860",
           async: true,
         },
