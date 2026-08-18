@@ -121,6 +121,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap",
         },
       ],
+      scripts: [
+        {
+          src: "https://www.googletagmanager.com/gtag/js?id=AW-18326020860",
+          async: true,
+        },
+        {
+          children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18326020860');`,
+        },
+      ],
     };
   },
   shellComponent: RootShell,

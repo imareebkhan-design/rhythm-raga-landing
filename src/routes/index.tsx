@@ -10,9 +10,9 @@ import { Faq, LeadFormSection } from "@/components/landing/FaqLead";
 import { Footer, StickyCta } from "@/components/landing/Footer";
 import { FAQS } from "@/components/landing/constants";
 
-const TITLE = "Music Institute in GTB Nagar, Delhi | RhythmRaga";
+const TITLE = "Music Institute in GTB Nagar, Delhi | Rhytthm Raga";
 const DESCRIPTION =
-  "RhythmRaga — music classes near you in GTB Nagar, Delhi. Guitar, piano, drums, vocals and more for kids and adults. Book your free trial class today.";
+  "Rhytthm Raga — music classes near you in GTB Nagar, Delhi. Guitar, piano, drums, vocals and more for kids and adults. Book your free trial class today.";
 const HOME_URL = absoluteUrl("/");
 const OG_IMAGE = absoluteUrl("/og-rhythmraga.png");
 
@@ -39,8 +39,8 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": ["MusicSchool", "LocalBusiness"],
           "@id": `${SITE_URL}/#organization`,
-          name: "RhythmRaga — School of Music and Arts",
-          alternateName: "Rhythm Raga Creative Learning Academy",
+          name: "Rhytthm Raga — School of Music and Arts",
+          alternateName: "Rhytthm Raga Creative Learning Academy",
           description: DESCRIPTION,
           url: HOME_URL,
           image: OG_IMAGE,
@@ -82,7 +82,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "WebSite",
           "@id": `${SITE_URL}/#website`,
-          name: "RhythmRaga",
+          name: "Rhytthm Raga",
           url: HOME_URL,
           publisher: { "@id": `${SITE_URL}/#organization` },
         }),

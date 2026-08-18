@@ -5,7 +5,7 @@ export const PHONE_2 = "+918130251057";
 export const PHONE_2_DISPLAY = "+91 81302 51057";
 export const WHATSAPP_NUMBER = "918796574448";
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hi Rhythm Raga! I'd like to book a free trial class.",
+  "Hi Rhytthm Raga! I'd like to book a free trial class.",
 )}`;
 export const CALL_LINK = `tel:${PHONE}`;
 export const CALL_LINK_2 = `tel:${PHONE_2}`;
