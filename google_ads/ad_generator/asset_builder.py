@@ -59,10 +59,10 @@ class AssetBuilder:
                 final_url=f"{base_url}/book?course=Vocals"
             ),
             SitelinkAsset(
-                text="Western Dance & Zumba",
-                description1="Dance Fitness & Choreography",
-                description2="Fun Energetic Offline Batches",
-                final_url=f"{base_url}/book?course=Zumba"
+                text="1-on-1 Music Mentors",
+                description1="Certified Expert Instructors",
+                description2="Personalized Step-by-Step Plans",
+                final_url=f"{base_url}/book"
             ),
             SitelinkAsset(
                 text="Creative Art & Craft",
@@ -129,7 +129,7 @@ class AssetBuilder:
         valid_snippets = [
             StructuredSnippetAsset(
                 header="Courses",
-                values=["Guitar", "Piano", "Drums", "Vocals", "Zumba", "Art"]
+                values=["Guitar", "Piano", "Drums", "Vocals", "Keyboard", "Art"]
             ),
             StructuredSnippetAsset(
                 header="Amenities",
