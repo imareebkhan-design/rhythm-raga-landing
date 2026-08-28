@@ -1,0 +1,965 @@
+{
+  "version": "1.0",
+  "business": "Rhythm Raga Academy",
+  "offer": "Music Classes in GTB Nagar, Delhi",
+  "objective": "lead_generation",
+  "daily_budget_inr": 500.0,
+  "daily_budget_micros": 500000000,
+  "currency": "INR",
+  "location_name": "Delhi, India",
+  "geo_target_id": "1007788",
+  "language_name": "English",
+  "language_id": "1000",
+  "bidding_strategy": "MANUAL_CPC",
+  "campaign_name": "SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI",
+  "campaign_type": "SEARCH",
+  "landing_page_url": "https://rhythmraga.in",
+  "ad_groups_count": 5,
+  "ad_groups": [
+    {
+      "ad_group_name": "SKAG - Music Classes Near Me",
+      "primary_keyword": "music classes near me",
+      "variant_keywords": [],
+      "cpc_bid_inr": 82.5,
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "responsive_search_ad": {
+        "final_urls": [
+          "https://rhythmraga.in"
+        ],
+        "path1": "MusicClasses",
+        "path2": "GtbNagar",
+        "headlines": [
+          {
+            "text": "Music Classes Near Me",
+            "pinned_field": "HEADLINE_1"
+          },
+          {
+            "text": "Offline Music Classes"
+          },
+          {
+            "text": "Music Classes in GTB Nagar"
+          },
+          {
+            "text": "Near GTB Nagar Metro Gate 4"
+          },
+          {
+            "text": "GTB Nagar Music Studio"
+          },
+          {
+            "text": "Learn Music From Scratch"
+          },
+          {
+            "text": "Book In-Person Studio Trial"
+          },
+          {
+            "text": "Visit Our GTB Nagar Studio"
+          },
+          {
+            "text": "Reserve Your Studio Demo Now"
+          },
+          {
+            "text": "Call or WhatsApp Us Today"
+          },
+          {
+            "text": "1-on-1 Certified Mentors"
+          },
+          {
+            "text": "Structured Course Curriculum"
+          },
+          {
+            "text": "Small Batches (Max 4-5)"
+          },
+          {
+            "text": "Classes for Kids & Adults"
+          },
+          {
+            "text": "Beginner to Advanced Batches"
+          }
+        ],
+        "descriptions": [
+          {
+            "text": "Offline music classes at GTB Nagar (near Metro Gate 4). 1-on-1 certified mentors."
+          },
+          {
+            "text": "Structured in-studio music lessons near Hudson Lane. Flexible morning & evening batches."
+          },
+          {
+            "text": "Premier physical music academy in North Delhi. Book your in-person studio trial today!"
+          },
+          {
+            "text": "Small offline batches for kids & adults in GTB Nagar. Call or WhatsApp to book demo."
+          }
+        ]
+      },
+      "negative_keywords": [
+        {
+          "text": "music classes teacher near me",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Near Me",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Teacher Near Me'"
+        },
+        {
+          "text": "music classes in gtb nagar",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Near Me",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes In Gtb Nagar'"
+        },
+        {
+          "text": "music classes fees gtb nagar",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Near Me",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Fees Gtb Nagar'"
+        },
+        {
+          "text": "best music classes academy delhi",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Near Me",
+          "reason": "Prevent cross-theme competition with 'SKAG - Best Music Classes Academy Delhi'"
+        }
+      ],
+      "rationale": "Intent: HIGH_COMMERCIAL_LOCAL, Variants: 0"
+    },
+    {
+      "ad_group_name": "SKAG - Music Classes Teacher Near Me",
+      "primary_keyword": "music classes teacher near me",
+      "variant_keywords": [],
+      "cpc_bid_inr": 82.5,
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "responsive_search_ad": {
+        "final_urls": [
+          "https://rhythmraga.in"
+        ],
+        "path1": "MusicClasses",
+        "path2": "GtbNagar",
+        "headlines": [
+          {
+            "text": "Music Classes Teacher Near Me",
+            "pinned_field": "HEADLINE_1"
+          },
+          {
+            "text": "Offline Music Classes"
+          },
+          {
+            "text": "Music Classes in GTB Nagar"
+          },
+          {
+            "text": "Near GTB Nagar Metro Gate 4"
+          },
+          {
+            "text": "GTB Nagar Music Studio"
+          },
+          {
+            "text": "Learn Music From Scratch"
+          },
+          {
+            "text": "Book In-Person Studio Trial"
+          },
+          {
+            "text": "Visit Our GTB Nagar Studio"
+          },
+          {
+            "text": "Reserve Your Studio Demo Now"
+          },
+          {
+            "text": "Call or WhatsApp Us Today"
+          },
+          {
+            "text": "1-on-1 Certified Mentors"
+          },
+          {
+            "text": "Structured Course Curriculum"
+          },
+          {
+            "text": "Small Batches (Max 4-5)"
+          },
+          {
+            "text": "Classes for Kids & Adults"
+          },
+          {
+            "text": "Beginner to Advanced Batches"
+          }
+        ],
+        "descriptions": [
+          {
+            "text": "Offline music classes at GTB Nagar (near Metro Gate 4). 1-on-1 certified mentors."
+          },
+          {
+            "text": "Structured in-studio music lessons near Hudson Lane. Flexible morning & evening batches."
+          },
+          {
+            "text": "Premier physical music academy in North Delhi. Book your in-person studio trial today!"
+          },
+          {
+            "text": "Small offline batches for kids & adults in GTB Nagar. Call or WhatsApp to book demo."
+          }
+        ]
+      },
+      "negative_keywords": [
+        {
+          "text": "music classes near me",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Teacher Near Me",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Near Me'"
+        },
+        {
+          "text": "music classes in gtb nagar",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Teacher Near Me",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes In Gtb Nagar'"
+        },
+        {
+          "text": "music classes fees gtb nagar",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Teacher Near Me",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Fees Gtb Nagar'"
+        },
+        {
+          "text": "best music classes academy delhi",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Teacher Near Me",
+          "reason": "Prevent cross-theme competition with 'SKAG - Best Music Classes Academy Delhi'"
+        }
+      ],
+      "rationale": "Intent: HIGH_COMMERCIAL_LOCAL, Variants: 0"
+    },
+    {
+      "ad_group_name": "SKAG - Music Classes In Gtb Nagar",
+      "primary_keyword": "music classes in gtb nagar",
+      "variant_keywords": [],
+      "cpc_bid_inr": 71.5,
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "responsive_search_ad": {
+        "final_urls": [
+          "https://rhythmraga.in"
+        ],
+        "path1": "MusicClasses",
+        "path2": "GtbNagar",
+        "headlines": [
+          {
+            "text": "Music Classes In Gtb Nagar",
+            "pinned_field": "HEADLINE_1"
+          },
+          {
+            "text": "Offline Music Classes"
+          },
+          {
+            "text": "Near GTB Nagar Metro Gate 4"
+          },
+          {
+            "text": "GTB Nagar Music Studio"
+          },
+          {
+            "text": "Learn Music From Scratch"
+          },
+          {
+            "text": "Book In-Person Studio Trial"
+          },
+          {
+            "text": "Visit Our GTB Nagar Studio"
+          },
+          {
+            "text": "Reserve Your Studio Demo Now"
+          },
+          {
+            "text": "Call or WhatsApp Us Today"
+          },
+          {
+            "text": "1-on-1 Certified Mentors"
+          },
+          {
+            "text": "Structured Course Curriculum"
+          },
+          {
+            "text": "Small Batches (Max 4-5)"
+          },
+          {
+            "text": "Classes for Kids & Adults"
+          },
+          {
+            "text": "Beginner to Advanced Batches"
+          },
+          {
+            "text": "Flexible Evening Batches"
+          }
+        ],
+        "descriptions": [
+          {
+            "text": "Offline music classes at GTB Nagar (near Metro Gate 4). 1-on-1 certified mentors."
+          },
+          {
+            "text": "Structured in-studio music lessons near Hudson Lane. Flexible morning & evening batches."
+          },
+          {
+            "text": "Premier physical music academy in North Delhi. Book your in-person studio trial today!"
+          },
+          {
+            "text": "Small offline batches for kids & adults in GTB Nagar. Call or WhatsApp to book demo."
+          }
+        ]
+      },
+      "negative_keywords": [
+        {
+          "text": "music classes near me",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes In Gtb Nagar",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Near Me'"
+        },
+        {
+          "text": "music classes teacher near me",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes In Gtb Nagar",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Teacher Near Me'"
+        },
+        {
+          "text": "music classes fees gtb nagar",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes In Gtb Nagar",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Fees Gtb Nagar'"
+        },
+        {
+          "text": "best music classes academy delhi",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes In Gtb Nagar",
+          "reason": "Prevent cross-theme competition with 'SKAG - Best Music Classes Academy Delhi'"
+        }
+      ],
+      "rationale": "Intent: HIGH_COMMERCIAL_LOCAL, Variants: 0"
+    },
+    {
+      "ad_group_name": "SKAG - Music Classes Fees Gtb Nagar",
+      "primary_keyword": "music classes fees gtb nagar",
+      "variant_keywords": [],
+      "cpc_bid_inr": 71.5,
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "responsive_search_ad": {
+        "final_urls": [
+          "https://rhythmraga.in"
+        ],
+        "path1": "MusicClasses",
+        "path2": "GtbNagar",
+        "headlines": [
+          {
+            "text": "Music Classes Fees Gtb Nagar",
+            "pinned_field": "HEADLINE_1"
+          },
+          {
+            "text": "Offline Music Classes"
+          },
+          {
+            "text": "Music Classes in GTB Nagar"
+          },
+          {
+            "text": "Near GTB Nagar Metro Gate 4"
+          },
+          {
+            "text": "GTB Nagar Music Studio"
+          },
+          {
+            "text": "Learn Music From Scratch"
+          },
+          {
+            "text": "Book In-Person Studio Trial"
+          },
+          {
+            "text": "Visit Our GTB Nagar Studio"
+          },
+          {
+            "text": "Reserve Your Studio Demo Now"
+          },
+          {
+            "text": "Call or WhatsApp Us Today"
+          },
+          {
+            "text": "1-on-1 Certified Mentors"
+          },
+          {
+            "text": "Structured Course Curriculum"
+          },
+          {
+            "text": "Small Batches (Max 4-5)"
+          },
+          {
+            "text": "Classes for Kids & Adults"
+          },
+          {
+            "text": "Beginner to Advanced Batches"
+          }
+        ],
+        "descriptions": [
+          {
+            "text": "Offline music classes at GTB Nagar (near Metro Gate 4). 1-on-1 certified mentors."
+          },
+          {
+            "text": "Structured in-studio music lessons near Hudson Lane. Flexible morning & evening batches."
+          },
+          {
+            "text": "Premier physical music academy in North Delhi. Book your in-person studio trial today!"
+          },
+          {
+            "text": "Small offline batches for kids & adults in GTB Nagar. Call or WhatsApp to book demo."
+          }
+        ]
+      },
+      "negative_keywords": [
+        {
+          "text": "music classes near me",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Fees Gtb Nagar",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Near Me'"
+        },
+        {
+          "text": "music classes teacher near me",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Fees Gtb Nagar",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Teacher Near Me'"
+        },
+        {
+          "text": "music classes in gtb nagar",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Fees Gtb Nagar",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes In Gtb Nagar'"
+        },
+        {
+          "text": "best music classes academy delhi",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Music Classes Fees Gtb Nagar",
+          "reason": "Prevent cross-theme competition with 'SKAG - Best Music Classes Academy Delhi'"
+        }
+      ],
+      "rationale": "Intent: HIGH_COMMERCIAL_LOCAL, Variants: 0"
+    },
+    {
+      "ad_group_name": "SKAG - Best Music Classes Academy Delhi",
+      "primary_keyword": "best music classes academy delhi",
+      "variant_keywords": [],
+      "cpc_bid_inr": 55.0,
+      "match_types": [
+        "EXACT",
+        "PHRASE"
+      ],
+      "responsive_search_ad": {
+        "final_urls": [
+          "https://rhythmraga.in"
+        ],
+        "path1": "MusicClasses",
+        "path2": "GtbNagar",
+        "headlines": [
+          {
+            "text": "Best Music Classes Academy",
+            "pinned_field": "HEADLINE_1"
+          },
+          {
+            "text": "Offline Music Classes"
+          },
+          {
+            "text": "Music Classes in GTB Nagar"
+          },
+          {
+            "text": "Near GTB Nagar Metro Gate 4"
+          },
+          {
+            "text": "GTB Nagar Music Studio"
+          },
+          {
+            "text": "Learn Music From Scratch"
+          },
+          {
+            "text": "Book In-Person Studio Trial"
+          },
+          {
+            "text": "Visit Our GTB Nagar Studio"
+          },
+          {
+            "text": "Reserve Your Studio Demo Now"
+          },
+          {
+            "text": "Call or WhatsApp Us Today"
+          },
+          {
+            "text": "1-on-1 Certified Mentors"
+          },
+          {
+            "text": "Structured Course Curriculum"
+          },
+          {
+            "text": "Small Batches (Max 4-5)"
+          },
+          {
+            "text": "Classes for Kids & Adults"
+          },
+          {
+            "text": "Beginner to Advanced Batches"
+          }
+        ],
+        "descriptions": [
+          {
+            "text": "Offline music classes at GTB Nagar (near Metro Gate 4). 1-on-1 certified mentors."
+          },
+          {
+            "text": "Structured in-studio music lessons near Hudson Lane. Flexible morning & evening batches."
+          },
+          {
+            "text": "Premier physical music academy in North Delhi. Book your in-person studio trial today!"
+          },
+          {
+            "text": "Small offline batches for kids & adults in GTB Nagar. Call or WhatsApp to book demo."
+          }
+        ]
+      },
+      "negative_keywords": [
+        {
+          "text": "music classes near me",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Best Music Classes Academy Delhi",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Near Me'"
+        },
+        {
+          "text": "music classes teacher near me",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Best Music Classes Academy Delhi",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Teacher Near Me'"
+        },
+        {
+          "text": "music classes in gtb nagar",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Best Music Classes Academy Delhi",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes In Gtb Nagar'"
+        },
+        {
+          "text": "music classes fees gtb nagar",
+          "match_type": "EXACT",
+          "level": "AD_GROUP",
+          "ad_group_name": "SKAG - Best Music Classes Academy Delhi",
+          "reason": "Prevent cross-theme competition with 'SKAG - Music Classes Fees Gtb Nagar'"
+        }
+      ],
+      "rationale": "Intent: HIGH_COMMERCIAL_LOCAL, Variants: 0"
+    }
+  ],
+  "campaign_negative_keywords": [
+    {
+      "text": "free chords",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "free tabs",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "free pdf",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "free notes",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "free download",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "free lyrics",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "free tutorial",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "free sheet music",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "jobs",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "job",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "salary",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "vacancy",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "career",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "hiring",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "recruitment",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "tutor vacancy",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "pdf",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "youtube",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "tutorial",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "lyrics",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "chords",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "tabs",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "definition",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "meaning",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "download",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "book",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "used",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "second hand",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "olx",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "quikr",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "wikipedia",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "zoom classes",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "online course",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "online classes only",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "software",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "virtual class",
+      "match_type": "BROAD",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Global non-commercial / low-intent filter"
+    },
+    {
+      "text": "sports",
+      "match_type": "EXACT",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Prevent irrelevance for Music Classes campaign"
+    },
+    {
+      "text": "swimming",
+      "match_type": "EXACT",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Prevent irrelevance for Music Classes campaign"
+    },
+    {
+      "text": "karate",
+      "match_type": "EXACT",
+      "level": "CAMPAIGN",
+      "ad_group_name": null,
+      "reason": "Prevent irrelevance for Music Classes campaign"
+    }
+  ],
+  "assets": {
+    "sitelinks": [
+      {
+        "text": "Learn Guitar",
+        "description1": "Acoustic & Electric Guitar",
+        "description2": "Offline Classes in GTB Nagar",
+        "final_url": "https://rhythmraga.in/book?course=Guitar"
+      },
+      {
+        "text": "Learn Piano & Keys",
+        "description1": "Western & Classical Keyboard",
+        "description2": "Beginner to Advanced Batches",
+        "final_url": "https://rhythmraga.in/book?course=Piano"
+      },
+      {
+        "text": "Learn Drums",
+        "description1": "Acoustic Drum Kits & Rhythm",
+        "description2": "Hands-On Practice in Studio",
+        "final_url": "https://rhythmraga.in/book?course=Drums"
+      },
+      {
+        "text": "Singing & Vocals",
+        "description1": "Classical & Western Singing",
+        "description2": "Pitch & Voice Training",
+        "final_url": "https://rhythmraga.in/book?course=Vocals"
+      },
+      {
+        "text": "1-on-1 Music Mentors",
+        "description1": "Certified Expert Instructors",
+        "description2": "Personalized Step-by-Step Plans",
+        "final_url": "https://rhythmraga.in/book"
+      },
+      {
+        "text": "Creative Art & Craft",
+        "description1": "Sketching, Painting & Colors",
+        "description2": "Kids & Teens Art Studio",
+        "final_url": "https://rhythmraga.in/book?course=Creative%20Art"
+      },
+      {
+        "text": "Book Free Trial Class",
+        "description1": "30-Min In-Person Studio Demo",
+        "description2": "Zero Obligation Free Session",
+        "final_url": "https://rhythmraga.in/book"
+      },
+      {
+        "text": "Batch Timings & Fees",
+        "description1": "Flexible Morning & Evening",
+        "description2": "Small Batches (Max 4-5)",
+        "final_url": "https://rhythmraga.in/#courses"
+      },
+      {
+        "text": "Visit GTB Nagar Studio",
+        "description1": "Near Metro Gate 4 Hudson Lane",
+        "description2": "Soundproof AC Practice Rooms",
+        "final_url": "https://rhythmraga.in/#location"
+      },
+      {
+        "text": "Kids Music Batches",
+        "description1": "Ages 4 to 14 Years Early Start",
+        "description2": "Fun Interactive Curriculum",
+        "final_url": "https://rhythmraga.in/book?course=Not%20sure%20yet"
+      }
+    ],
+    "callouts": [
+      {
+        "text": "Near GTB Nagar Metro Gate"
+      },
+      {
+        "text": "In-Studio Offline Classes"
+      },
+      {
+        "text": "1-on-1 Certified Mentors"
+      },
+      {
+        "text": "Small Batches (Max 4-5)"
+      },
+      {
+        "text": "Kids & Adults Batches"
+      },
+      {
+        "text": "Flexible Batches"
+      },
+      {
+        "text": "Real Acoustic Instruments"
+      }
+    ],
+    "structured_snippets": [
+      {
+        "header": "Courses",
+        "values": [
+          "Guitar",
+          "Piano",
+          "Drums",
+          "Vocals",
+          "Keyboard",
+          "Art"
+        ]
+      },
+      {
+        "header": "Amenities",
+        "values": [
+          "Soundproof Rooms",
+          "Acoustic Kits",
+          "AC Studio",
+          "Trial Class"
+        ]
+      }
+    ],
+    "call_asset": {
+      "phone_number": "+918796574448",
+      "country_code": "IN"
+    }
+  },
+  "tracking_configuration": {
+    "utm_source": "google",
+    "utm_medium": "cpc",
+    "utm_campaign": "search_skag_music_classes_gtb_nagar__delhi"
+  },
+  "validation_results": {},
+  "approval_status": "PENDING"
+}
