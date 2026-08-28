@@ -76,8 +76,8 @@ def generate_top_performing_ad_groups():
             ],
             "descriptions": [
                 "Master classical & western piano at GTB Nagar. 1-on-1 certified guidance & small batches.",
-                "In-studio piano & keyboard classes near Metro Gate 4. Book your free studio trial class today!",
-                "Structured piano lessons for kids & adults in North Delhi. Flexible morning & evening batches.",
+                "In-studio piano lessons near Metro Gate 4. Book your free studio trial class today!",
+                "Structured piano lessons for kids & adults in North Delhi. Flexible batch timings.",
                 "Top rated music academy near Hudson Lane. Call or WhatsApp to start your musical journey!"
             ],
             "path1": "Piano",
@@ -113,8 +113,8 @@ def generate_top_performing_ad_groups():
             ],
             "descriptions": [
                 "Hands-on acoustic drum lessons in GTB Nagar. 1-on-1 certified coaching & rhythm training.",
-                "In-studio drum classes near Metro Gate 4 Hudson Lane. Book your 30-min trial session today!",
-                "Learn beats, tempo & acoustic drum kits. Small batches with flexible morning & evening slots.",
+                "In-studio drum classes near Metro Gate 4 Hudson Lane. Book your trial session today!",
+                "Learn beats, tempo & acoustic drum kits. Small batches with flexible morning slots.",
                 "North Delhi's premier rhythm & drum academy. Call or WhatsApp us to reserve your seat!"
             ],
             "path1": "Drums",
@@ -150,9 +150,9 @@ def generate_top_performing_ad_groups():
                 "Top Rated Music Academy"
             ],
             "descriptions": [
-                "Classical & western vocal coaching in GTB Nagar. Master pitch, breath control & scale modulation.",
+                "Classical & western vocal coaching in GTB Nagar. Master pitch, breath control & scale.",
                 "In-studio singing lessons near Metro Gate 4 Hudson Lane. Book your free vocal trial today!",
-                "Personalized 1-on-1 vocal guidance for kids & adults. Flexible morning & evening batch slots.",
+                "Personalized 1-on-1 vocal guidance for kids & adults. Flexible morning & evening batches.",
                 "North Delhi's trusted singing academy near Delhi University. Call or WhatsApp to join!"
             ],
             "path1": "Vocals",
@@ -188,9 +188,9 @@ def generate_top_performing_ad_groups():
                 "Premier Delhi Music Academy"
             ],
             "descriptions": [
-                "Premier physical music academy in GTB Nagar. Guitar, Piano, Drums, Vocals with expert mentors.",
+                "Premier music academy in GTB Nagar. Guitar, Piano, Drums, Vocals with expert mentors.",
                 "Located near Metro Gate 4 Hudson Lane. Fully soundproof studios with acoustic instruments.",
-                "Flexible morning & evening offline batches for all ages. Book your free 30-min trial demo today!",
+                "Flexible morning & evening offline batches for all ages. Book your free trial demo today!",
                 "North Delhi's top rated offline music institute. Call or WhatsApp us to get batch details!"
             ],
             "path1": "Academy",
@@ -248,7 +248,7 @@ def generate_top_performing_ad_groups():
             ] + ag["headlines"] + ag["descriptions"] + ["1"]
             writer.writerow(row)
 
-    print("✅ Successfully generated top performing ad groups, keywords, and RSAs CSVs.")
+    print("✅ Successfully regenerated top performing ad groups with strict character limits.")
 
 if __name__ == "__main__":
     generate_top_performing_ad_groups()
