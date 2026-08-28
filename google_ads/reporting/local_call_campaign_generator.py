@@ -8,7 +8,6 @@ def generate_local_call_campaign():
     campaign_name = "LOCAL_CALLS_GMB_GTB_NAGAR_5KM"
     phone_number = "+918796574448"
     phone_country = "IN"
-    business_name = "Rhytthm Raga Music Academy"
     verification_url = "https://rhythmraga.in"
 
     # 1. Campaign CSV
@@ -56,15 +55,11 @@ def generate_local_call_campaign():
                 "Soundproof AC Studios"
             ],
             "descriptions": [
-                "Speak directly with a music mentor. Offline guitar, piano, drums & vocal coaching in GTB Nagar.",
-                "Small batches near Hudson Lane. Call now to reserve your free in-person studio trial session!",
-                "Learn music instruments from scratch. Certified instructors with personalized guidance.",
-                "North Delhi's premier music academy. Call +91 87965 74448 for batch timings & fee details."
-            ],
-            "call_h1": "Call Rhytthm Raga Academy",
-            "call_h2": "GTB Nagar Metro Gate 4",
-            "call_desc1": "Speak directly with a music mentor. Offline guitar, piano, drums & vocal batches.",
-            "call_desc2": "Small batches near Hudson Lane. Call now to reserve your free studio demo class!"
+                "Speak directly with a music mentor. Offline guitar, piano, drums & vocals in GTB Nagar.",
+                "Small batches near Hudson Lane. Call now to reserve your free in-person studio trial!",
+                "Learn music instruments from scratch. Certified instructors & personalized coaching.",
+                "North Delhi's premier music academy. Call +91 87965 74448 for batch timings & fees."
+            ]
         },
         {
             "name": "Nearby Instruments - Call First",
@@ -95,15 +90,11 @@ def generate_local_call_campaign():
                 "Hands-On Studio Practice"
             ],
             "descriptions": [
-                "Call now to speak with certified guitar, piano, drum & vocal mentors at GTB Nagar Metro Gate 4.",
-                "In-studio offline classes for beginners, kids & adults. Call to schedule your free demo class today!",
-                "Master acoustic instruments in small batches. Flexible weekday and weekend timings available.",
-                "Speak with our senior faculty today for course structure, fees, and slot availability."
-            ],
-            "call_h1": "Guitar Piano Drums Vocals",
-            "call_h2": "Call Rhytthm Raga GTB Nagar",
-            "call_desc1": "Call certified music mentors directly. In-studio guitar, piano, drums & singing classes.",
-            "call_desc2": "Gate 4 GTB Nagar Metro. Call now to book your free in-person trial session!"
+                "Call certified guitar, piano, drum & vocal mentors at GTB Nagar Metro Gate 4.",
+                "In-studio offline classes for kids & adults. Call to schedule your free demo today!",
+                "Master acoustic instruments in small batches. Flexible weekday & weekend timings.",
+                "Speak with our senior faculty today for course structure, fees, and slot details."
+            ]
         },
         {
             "name": "Neighborhood Areas - 5km Radius",
@@ -135,15 +126,11 @@ def generate_local_call_campaign():
                 "Learn Music From Scratch"
             ],
             "descriptions": [
-                "Serving Hudson Lane, Model Town, Mukherjee Nagar & Kamla Nagar. In-studio offline music lessons.",
-                "Just 2 mins from GTB Nagar Metro Gate 4. Call our academy directly to plan your first visit!",
+                "Serving Hudson Lane, Model Town & Mukherjee Nagar. In-studio offline music lessons.",
+                "Just 2 mins from GTB Nagar Metro Gate 4. Call our academy to plan your first visit!",
                 "Structured guitar, piano, drums & vocal coaching for students & adults in North Delhi.",
-                "Join North Delhi's top rated creative music academy. Call +91 87965 74448 to book demo!"
-            ],
-            "call_h1": "Music Classes North Delhi",
-            "call_h2": "Hudson Lane & GTB Nagar",
-            "call_desc1": "Offline music academy for Model Town, Mukherjee Nagar & DU North Campus students.",
-            "call_desc2": "Gate 4 GTB Nagar Metro. Call +91 87965 74448 now to reserve your trial class!"
+                "North Delhi's top rated creative music academy. Call +91 87965 74448 to book demo!"
+            ]
         }
     ]
 
@@ -244,7 +231,7 @@ def generate_local_call_campaign():
                 neg, "Broad match"
             ])
 
-    print("✅ Successfully generated Google My Business Local Call Campaign package.")
+    print("✅ Successfully generated Google My Business Local Call Campaign package with strict character lengths.")
 
 if __name__ == "__main__":
     generate_local_call_campaign()
