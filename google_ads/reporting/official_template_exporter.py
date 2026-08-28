@@ -132,13 +132,13 @@ class GoogleOfficialTemplateExporter:
         with open(sitelink_file, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow([
-                "Action", "Campaign", "Asset type", "Link text",
-                "Description line 1", "Description line 2", "Final URL"
+                "Row Type", "Action", "Level", "Campaign", "Asset type",
+                "Link text", "Description line 1", "Description line 2", "Final URL", "Status"
             ])
             for s in blueprint.assets.sitelinks:
                 writer.writerow([
-                    "Add", blueprint.campaign_name, "Sitelink", s.text,
-                    s.description1, s.description2, s.final_url
+                    "Asset", "Add", "Campaign", blueprint.campaign_name, "Sitelink",
+                    s.text, s.description1, s.description2, s.final_url, "Enabled"
                 ])
         files["sitelinks"] = sitelink_file
 
@@ -147,15 +147,18 @@ class GoogleOfficialTemplateExporter:
         with open(callout_file, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow([
-                "Action", "Campaign", "Asset type", "Callout text", "Header", "Values"
+                "Row Type", "Action", "Level", "Campaign", "Asset type",
+                "Callout text", "Header", "Values", "Status"
             ])
             for c in blueprint.assets.callouts:
                 writer.writerow([
-                    "Add", blueprint.campaign_name, "Callout", c.text, "", ""
+                    "Asset", "Add", "Campaign", blueprint.campaign_name, "Callout",
+                    c.text, "", "", "Enabled"
                 ])
             for snip in blueprint.assets.structured_snippets:
                 writer.writerow([
-                    "Add", blueprint.campaign_name, "Structured snippet", "", snip.header, "; ".join(snip.values)
+                    "Asset", "Add", "Campaign", blueprint.campaign_name, "Structured snippet",
+                    "", snip.header, "; ".join(snip.values), "Enabled"
                 ])
         files["callouts_snippets"] = callout_file
 

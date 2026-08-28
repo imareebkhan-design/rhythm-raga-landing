@@ -1,10 +1,10 @@
-Action,Campaign,Asset type,Callout text,Header,Values
-Add,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,Near GTB Nagar Metro Gate,,
-Add,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,In-Studio Offline Classes,,
-Add,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,1-on-1 Certified Mentors,,
-Add,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,Small Batches (Max 4-5),,
-Add,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,Kids & Adults Batches,,
-Add,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,Flexible Batches,,
-Add,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,Real Acoustic Instruments,,
-Add,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Structured snippet,,Courses,Guitar; Piano; Drums; Vocals; Keyboard; Art
-Add,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Structured snippet,,Amenities,Soundproof Rooms; Acoustic Kits; AC Studio; Trial Class
+Row Type,Action,Level,Campaign,Asset type,Callout text,Header,Values,Status
+Asset,Add,Campaign,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,Near GTB Nagar Metro Gate,,,Enabled
+Asset,Add,Campaign,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,In-Studio Offline Classes,,,Enabled
+Asset,Add,Campaign,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,1-on-1 Certified Mentors,,,Enabled
+Asset,Add,Campaign,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,Small Batches (Max 4-5),,,Enabled
+Asset,Add,Campaign,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,Kids & Adults Batches,,,Enabled
+Asset,Add,Campaign,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,Flexible Batches,,,Enabled
+Asset,Add,Campaign,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Callout,Real Acoustic Instruments,,,Enabled
+Asset,Add,Campaign,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Structured snippet,,Courses,Guitar; Piano; Drums; Vocals; Keyboard; Art,Enabled
+Asset,Add,Campaign,SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI,Structured snippet,,Amenities,Soundproof Rooms; Acoustic Kits; AC Studio; Trial Class,Enabled
