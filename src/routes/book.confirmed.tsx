@@ -1,9 +1,10 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { format, parseISO } from "date-fns";
 import { CheckCircle2, Calendar, MessageCircle, MapPin } from "lucide-react";
 import { BookingShell } from "@/components/booking/BookingShell";
 import { buildIcs, downloadIcs } from "@/lib/ics";
+import { trackGoogleAdsConversion } from "@/lib/analytics";
 
 const WHATSAPP_NUMBER = "918796574448"; // TODO: update to real academy number
 
@@ -32,6 +33,7 @@ type Booking = {
 function Confirmed() {
   const navigate = useNavigate();
   const [b, setB] = useState<Booking | null>(null);
+  const conversionFired = useRef(false);
 
   useEffect(() => {
     const raw = sessionStorage.getItem("rr_booking");
@@ -39,7 +41,16 @@ function Confirmed() {
       navigate({ to: "/book" });
       return;
     }
-    setB(JSON.parse(raw));
+    try {
+      const parsed = JSON.parse(raw);
+      setB(parsed);
+      if (!conversionFired.current && parsed?.bookingId) {
+        conversionFired.current = true;
+        trackGoogleAdsConversion(parsed.bookingId);
+      }
+    } catch {
+      navigate({ to: "/book" });
+    }
   }, [navigate]);
 
   if (!b || !b.slot || !b.lead) return null;

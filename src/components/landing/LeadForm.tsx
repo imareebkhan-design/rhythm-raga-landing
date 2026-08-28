@@ -27,11 +27,22 @@ export function LeadForm({
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
   const [started, setStarted] = useState(false);
+  const [selectedInstrument, setSelectedInstrument] = useState("");
   const utmRef = useRef<Record<string, string>>({});
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     utmRef.current = readUtm();
+    if (typeof window !== "undefined") {
+      const p = new URLSearchParams(window.location.search);
+      const req = p.get("course") || p.get("instrument");
+      if (req) {
+        const found = INSTRUMENT_OPTIONS.find(
+          (opt) => opt.course.toLowerCase() === req.toLowerCase().trim() || opt.label.toLowerCase() === req.toLowerCase().trim()
+        );
+        if (found) setSelectedInstrument(found.label);
+      }
+    }
   }, []);
 
   // Fire form_view once the form scrolls into view.
@@ -138,11 +149,14 @@ export function LeadForm({
 
   return (
     <div ref={sectionRef} className={`glass-card rounded-3xl p-6 sm:p-8 ${className}`}>
+      <div className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary mb-2">
+        <span>📍</span> In-Studio Offline Classes • GTB Nagar, Delhi
+      </div>
       <h3 className="font-display text-xl font-extrabold text-ink sm:text-2xl">
-        Book Your Free Trial Class
+        Book In-Person Trial Class
       </h3>
       <p className="mt-1.5 text-sm text-muted-foreground">
-        Tell us what you want to learn and our team will help you get started.
+        Visit our music studio near GTB Nagar Metro Gate 4. Tell us what you want to learn:
       </p>
 
       <form onSubmit={onSubmit} onChange={onFirstInteraction} className="mt-5 space-y-4" noValidate>
@@ -193,7 +207,11 @@ export function LeadForm({
             id={`instrument-${variant}`}
             name="instrument"
             required
-            defaultValue=""
+            value={selectedInstrument}
+            onChange={(e) => {
+              setSelectedInstrument(e.target.value);
+              setErrors((prev) => ({ ...prev, instrument: undefined }));
+            }}
             aria-invalid={!!errors.instrument}
             className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none aria-[invalid=true]:border-destructive"
           >

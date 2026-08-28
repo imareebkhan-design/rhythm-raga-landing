@@ -8,6 +8,9 @@
 // To go live: load GTM (or GA4 + Meta Pixel base scripts) in __root.tsx and
 // the events below start flowing automatically.
 
+export const GOOGLE_ADS_ID = "AW-18326020860";
+export const GOOGLE_ADS_CONVERSION_SEND_TO = "AW-18326020860/XraoCPnl9uMcEPzFw6JE";
+
 export type AnalyticsEvent =
   | "hero_cta_click"
   | "form_view"
@@ -22,6 +25,26 @@ export type AnalyticsEvent =
 
 type Params = Record<string, string | number | boolean | null | undefined>;
 
+/** Fire Google Ads conversion tracking event */
+export function trackGoogleAdsConversion(
+  transactionId: string = "",
+  extraParams: Record<string, any> = {},
+): void {
+  if (typeof window === "undefined") return;
+  const w = window as any;
+  try {
+    if (typeof w.gtag === "function") {
+      w.gtag("event", "conversion", {
+        send_to: GOOGLE_ADS_CONVERSION_SEND_TO,
+        transaction_id: transactionId,
+        ...extraParams,
+      });
+    }
+  } catch {
+    /* analytics must never break the page */
+  }
+}
+
 /** Fire a conversion/interaction event to all available sinks. Safe no-op if none exist. */
 export function track(event: AnalyticsEvent, params: Params = {}): void {
   if (typeof window === "undefined") return;
@@ -35,6 +58,11 @@ export function track(event: AnalyticsEvent, params: Params = {}): void {
 
     // GA4 (if gtag is loaded directly instead of via GTM)
     w.gtag?.("event", event, params);
+
+    // Google Ads conversion on form_success
+    if (event === "form_success") {
+      trackGoogleAdsConversion(typeof params.transaction_id === "string" ? params.transaction_id : "");
+    }
 
     // Meta Pixel — map the key funnel events to standard pixel events
     if (typeof w.fbq === "function") {

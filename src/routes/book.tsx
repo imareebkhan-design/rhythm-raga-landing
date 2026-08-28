@@ -6,6 +6,7 @@ import { CheckCircle2, Loader2 } from "lucide-react";
 import { submitLead } from "@/lib/booking.functions";
 import { COURSE_OPTIONS, leadSchema } from "@/lib/booking-schemas";
 import { BookingShell } from "@/components/booking/BookingShell";
+import { track, trackGoogleAdsConversion } from "@/lib/analytics";
 
 export const Route = createFileRoute("/book")({
   head: () => ({
@@ -62,13 +63,28 @@ function readUtm(): Record<string, string> {
   return out;
 }
 
+function readInitialCourse(): string {
+  if (typeof window === "undefined") return "Not sure yet";
+  const p = new URLSearchParams(window.location.search);
+  const requested = p.get("course") || p.get("instrument");
+  if (!requested) return "Not sure yet";
+  const match = COURSE_OPTIONS.find(
+    (c) => c.toLowerCase() === requested.toLowerCase().trim()
+  );
+  return match || "Not sure yet";
+}
+
 function BookLead() {
   const navigate = useNavigate();
   const submit = useServerFn(submitLead);
   const [loading, setLoading] = useState(false);
   const [utm, setUtm] = useState<Record<string, string>>({});
+  const [selectedCourse, setSelectedCourse] = useState("Not sure yet");
 
-  useEffect(() => setUtm(readUtm()), []);
+  useEffect(() => {
+    setUtm(readUtm());
+    setSelectedCourse(readInitialCourse());
+  }, []);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -91,7 +107,8 @@ function BookLead() {
     setLoading(true);
     try {
       const res = await submit({ data: parsed.data });
-      // Meta/Google pixel hooks (no-op if unset)
+      track("form_success", { form: "booking_step_1", course: parsed.data.course, transaction_id: res.leadId });
+      trackGoogleAdsConversion(res.leadId);
       if (typeof window !== "undefined") {
         (window as any).fbq?.("track", "Lead");
         (window as any).gtag?.("event", "generate_lead");
@@ -155,7 +172,8 @@ function BookLead() {
                 id="course"
                 name="course"
                 required
-                defaultValue="Not sure yet"
+                value={selectedCourse}
+                onChange={(e) => setSelectedCourse(e.target.value)}
                 className="w-full rounded-xl border border-border bg-background px-4 py-3 text-ink focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none"
               >
                 {COURSE_OPTIONS.map((c) => (

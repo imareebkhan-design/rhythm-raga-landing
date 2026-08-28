@@ -33,3 +33,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python / Local Temp
+.venv/
+__pycache__/
+*.pyc
+supabase/.temp/
+.agents/
+.claude/

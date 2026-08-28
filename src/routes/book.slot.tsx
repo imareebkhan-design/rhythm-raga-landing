@@ -7,6 +7,7 @@ import { format, isSameDay, parseISO } from "date-fns";
 import { Loader2, Calendar as CalendarIcon } from "lucide-react";
 import { bookSlot, listAvailableSlots } from "@/lib/booking.functions";
 import { BookingShell } from "@/components/booking/BookingShell";
+import { trackGoogleAdsConversion } from "@/lib/analytics";
 
 export const Route = createFileRoute("/book/slot")({
   head: () => ({
@@ -72,6 +73,7 @@ function PickSlot() {
     try {
       const res = await bookFn({ data: { leadId: lead.leadId, slotId } });
       if (res.status === "ok" || res.status === "already_booked") {
+        trackGoogleAdsConversion(res.bookingId);
         if (typeof window !== "undefined") {
           (window as any).fbq?.("track", "Schedule");
           (window as any).gtag?.("event", "schedule");
