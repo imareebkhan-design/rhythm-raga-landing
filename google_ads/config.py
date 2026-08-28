@@ -38,7 +38,7 @@ class Config:
     DEFAULT_GEO_TARGET: str = os.getenv("DEFAULT_LOCATION", "1007788")  # Delhi, India
     DEFAULT_LANGUAGE: str = os.getenv("DEFAULT_LANGUAGE", "1000")       # English
     DEFAULT_NETWORK: str = os.getenv("DEFAULT_NETWORK", "GOOGLE_SEARCH")
-    DEFAULT_BUDGET: float = float(os.getenv("DEFAULT_BUDGET", "500.0"))
+    DEFAULT_BUDGET: float = float(os.getenv("DEFAULT_BUDGET", "1000.0"))
 
     # Bidding & Thresholds
     DEFAULT_BIDDING_STRATEGY: str = os.getenv("DEFAULT_BIDDING_STRATEGY", "MANUAL_CPC")
