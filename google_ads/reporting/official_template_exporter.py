@@ -24,7 +24,7 @@ class GoogleOfficialTemplateExporter:
                 "Location", "EU political ads"
             ])
             writer.writerow([
-                "Campaign", "Add", "Paused", blueprint.campaign_name, "Search",
+                "Campaign", "Add", "Enabled", blueprint.campaign_name, "Search",
                 "Google search", f"{blueprint.daily_budget_inr:.2f}", "Daily", "Manual CPC",
                 "en", "Delhi, India", "No"
             ])
