@@ -35,12 +35,22 @@ export function LeadForm({
     utmRef.current = readUtm();
     if (typeof window !== "undefined") {
       const p = new URLSearchParams(window.location.search);
-      const req = p.get("course") || p.get("instrument");
+      const req = (p.get("course") || p.get("instrument") || "").toLowerCase().trim();
       if (req) {
-        const found = INSTRUMENT_OPTIONS.find(
-          (opt) => opt.course.toLowerCase() === req.toLowerCase().trim() || opt.label.toLowerCase() === req.toLowerCase().trim()
-        );
-        if (found) setSelectedInstrument(found.label);
+        if (req.includes("piano") || req.includes("keyboard") || req.includes("key")) {
+          setSelectedInstrument("Piano");
+        } else if (req.includes("guitar")) {
+          setSelectedInstrument("Guitar");
+        } else if (req.includes("drum")) {
+          setSelectedInstrument("Drums");
+        } else if (req.includes("vocal") || req.includes("sing")) {
+          setSelectedInstrument("Vocals");
+        } else {
+          const found = INSTRUMENT_OPTIONS.find(
+            (opt) => opt.course.toLowerCase() === req || opt.label.toLowerCase() === req
+          );
+          if (found) setSelectedInstrument(found.label);
+        }
       }
     }
   }, []);

@@ -32,7 +32,7 @@ class AssetBuilder:
         """
         loc_short = location.split(',')[0].strip()
 
-        # 1. Sitelinks (Course-specific high intent links)
+        # 1. Sitelinks (Full catalog of high-intent instrument & academy links)
         raw_sitelinks = [
             SitelinkAsset(
                 text="Learn Guitar",
@@ -55,14 +55,44 @@ class AssetBuilder:
             SitelinkAsset(
                 text="Singing & Vocals",
                 description1="Classical & Western Singing",
-                description2="Pitch & Breath Control",
+                description2="Pitch & Voice Training",
                 final_url=f"{base_url}/book?course=Vocals"
+            ),
+            SitelinkAsset(
+                text="Western Dance & Zumba",
+                description1="Dance Fitness & Choreography",
+                description2="Fun Energetic Offline Batches",
+                final_url=f"{base_url}/book?course=Zumba"
+            ),
+            SitelinkAsset(
+                text="Creative Art & Craft",
+                description1="Sketching, Painting & Colors",
+                description2="Kids & Teens Art Studio",
+                final_url=f"{base_url}/book?course=Creative%20Art"
             ),
             SitelinkAsset(
                 text="Book Free Trial Class",
                 description1="30-Min In-Person Studio Demo",
-                description2=f"Near {loc_short} Metro Gate 4",
+                description2="Zero Obligation Free Session",
                 final_url=f"{base_url}/book"
+            ),
+            SitelinkAsset(
+                text="Batch Timings & Fees",
+                description1="Flexible Morning & Evening",
+                description2="Small Batches (Max 4-5)",
+                final_url=f"{base_url}/#courses"
+            ),
+            SitelinkAsset(
+                text="Visit GTB Nagar Studio",
+                description1="Near Metro Gate 4 Hudson Lane",
+                description2="Soundproof AC Practice Rooms",
+                final_url=f"{base_url}/#location"
+            ),
+            SitelinkAsset(
+                text="Kids Music Batches",
+                description1="Ages 4 to 14 Years Early Start",
+                description2="Fun Interactive Curriculum",
+                final_url=f"{base_url}/book?course=Not%20sure%20yet"
             )
         ]
 

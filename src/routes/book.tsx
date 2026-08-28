@@ -66,10 +66,18 @@ function readUtm(): Record<string, string> {
 function readInitialCourse(): string {
   if (typeof window === "undefined") return "Not sure yet";
   const p = new URLSearchParams(window.location.search);
-  const requested = p.get("course") || p.get("instrument");
+  const requested = (p.get("course") || p.get("instrument") || "").toLowerCase().trim();
   if (!requested) return "Not sure yet";
+
+  if (requested.includes("guitar")) return "Guitar";
+  if (requested.includes("piano") || requested.includes("keyboard") || requested.includes("key")) return "Piano / Keyboard";
+  if (requested.includes("drum")) return "Drums";
+  if (requested.includes("vocal") || requested.includes("sing")) return "Vocal Singing";
+  if (requested.includes("zumba") || requested.includes("dance")) return "Zumba";
+  if (requested.includes("art") || requested.includes("draw") || requested.includes("paint") || requested.includes("craft")) return "Creative Art";
+
   const match = COURSE_OPTIONS.find(
-    (c) => c.toLowerCase() === requested.toLowerCase().trim()
+    (c) => c.toLowerCase() === requested
   );
   return match || "Not sure yet";
 }
