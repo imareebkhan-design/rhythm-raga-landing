@@ -41,3 +41,5 @@ __pycache__/
 supabase/.temp/
 .agents/
 .claude/
+
+google_ads_templates/
