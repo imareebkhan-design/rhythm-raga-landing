@@ -58,7 +58,7 @@ def generate_local_call_campaign():
                 "Speak directly with a music mentor. Offline guitar, piano, drums & vocals in GTB Nagar.",
                 "Small batches near Hudson Lane. Call now to reserve your free in-person studio trial!",
                 "Learn music instruments from scratch. Certified instructors & personalized coaching.",
-                "North Delhi's premier music academy. Call +91 87965 74448 for batch timings & fees."
+                "North Delhi's premier music academy. Contact us today for batch timings & fees."
             ]
         },
         {
@@ -129,7 +129,7 @@ def generate_local_call_campaign():
                 "Serving Hudson Lane, Model Town & Mukherjee Nagar. In-studio offline music lessons.",
                 "Just 2 mins from GTB Nagar Metro Gate 4. Call our academy to plan your first visit!",
                 "Structured guitar, piano, drums & vocal coaching for students & adults in North Delhi.",
-                "North Delhi's top rated creative music academy. Call +91 87965 74448 to book demo!"
+                "North Delhi's top rated creative music academy. Contact us today to book demo!"
             ]
         }
     ]
