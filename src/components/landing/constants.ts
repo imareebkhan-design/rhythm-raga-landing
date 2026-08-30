@@ -26,35 +26,36 @@ export const GOOGLE_REVIEWS_LINK = MAPS_LINK;
 
 export const FAQS = [
   {
-    q: "Do I need prior experience?",
-    a: "No. Most of our students start as complete beginners. Every course begins with the fundamentals, and your mentor personalizes the pace to you.",
+    q: "How to learn guitar for beginners at RhythmRaga?",
+    a: "Our beginner guitar course starts from scratch with open chords, strumming patterns, and finger placement. You will learn to play your first full song within 4 weeks with 1-on-1 certified mentor guidance.",
   },
   {
-    q: "Is this suitable for beginners?",
-    a: "Yes — beginners are our focus. Every course is designed to take you from zero, step by step, with hands-on guidance from your first class.",
+    q: "Do I need prior experience or my own instrument?",
+    a: "No. Most students start with zero experience. All instruments (acoustic & electric guitars, 88-key pianos, synthesizers, and acoustic drum kits) are provided in our soundproof studio during class.",
   },
   {
-    q: "What instruments can I learn?",
-    a: "Guitar, Piano, Drums and Vocals are our main music courses. We also offer Zumba and Creative Art.",
+    q: "Where is the music academy located in North Delhi?",
+    a: "We are located at Gate 4, GTB Nagar Metro Station, 2529 Basement (opposite Domino's, near McDonald's & Hudson Lane). We are easily accessible from Civil Lines, Model Town, Mukherjee Nagar, Kamla Nagar, Roop Nagar, and DU North Campus.",
   },
   {
-    q: "Are the classes offline?",
-    a: "Yes. All classes are held in person at our academy in GTB Nagar, Delhi — a real learning environment with mentors and other students.",
+    q: "What music courses and instruments are offered?",
+    a: "We offer 100% offline in-studio training for Acoustic & Electric Guitar, Piano & Digital Keyboard, Acoustic Drums & Percussion, and Singing/Vocal Training (Hindustani Classical & Western Contemporary).",
   },
   {
-    q: "Where is the academy located?",
-    a: "We're in GTB Nagar, Delhi. Once you enquire, our team will share the exact location and help you plan your first visit.",
+    q: "Are the classes offline or online?",
+    a: "All classes are held 100% offline in person at our GTB Nagar academy for real hands-on learning, posture correction, and live mentor interaction.",
   },
   {
-    q: "How does the free trial work?",
-    a: "Fill the short form and our team will call you. You visit the academy, meet your mentor and experience a class — free — before deciding anything.",
+    q: "How does the free trial class work?",
+    a: "Fill the short form on our website. Our team will call or message you on WhatsApp to schedule a free 30-minute studio demo where you meet your mentor and experience a lesson before enrolling.",
   },
   {
-    q: "How do I know which course is right for me?",
-    a: "Tell us what you're interested in and our team will help you pick the best starting point based on your goals.",
+    q: "Do you offer vocal training for classical and Bollywood singing?",
+    a: "Yes. Our vocal coaching covers voice culture, pitch training (Sur & Taal), breath control, Hindustani classical Raags, and contemporary Western/Bollywood vocal performance.",
   },
   {
-    q: "How do I get started?",
-    a: "Fill the short enquiry form on this page. Our team will contact you shortly to help you choose a class and book your free trial.",
+    q: "Are weekend batches available for working professionals and college students?",
+    a: "Yes. We offer flexible morning, evening, and weekend slots tailored for college students from Delhi University and working professionals across North Delhi.",
   },
 ];
+

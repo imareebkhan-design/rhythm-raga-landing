@@ -88,7 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { title: DEFAULT_TITLE },
         { name: "description", content: DEFAULT_DESC },
-        { name: "keywords", content: "music academy gtb nagar, guitar classes near me, singing classes north delhi, piano lessons hudson lane, drum classes delhi, vocal training delhi university, learn guitar delhi, music school gtb nagar" },
+        { name: "keywords", content: "guitar classes near me, guitar for beginners, how to learn guitar, guitar classes in gtb nagar, guitar lessons in civil lines, piano classes near me, keyboard lessons in model town, learn piano for beginners, drum classes near me, drumming lessons in hudson lane, singing classes near me, vocal training in north delhi, hindustani classical vocal classes, music academy near me, music school in gtb nagar, music classes near delhi university" },
         { name: "author", content: "RhythmRaga" },
         { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
         { name: "googlebot", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
