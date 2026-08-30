@@ -1,2 +1,2 @@
-Row Type,Action,Campaign status,Campaign,Campaign type,Networks,Budget,Budget type,Bid strategy type,Language,Location,EU political ads
-Campaign,Add,Enabled,LOCAL_CALLS_GMB_GTB_NAGAR_5KM,Search,Google search,350.00,Daily,Manual CPC,en,"Delhi, India",No
+Row Type,Action,Campaign status,Campaign,Campaign type,Networks,Budget,Budget type,Bid strategy type,Language,Location,Location type,Location exclude type,EU political ads
+Campaign,Add,Enabled,LOCAL_CALLS_GMB_GTB_NAGAR_5KM,Search,Google search,350.00,Daily,Manual CPC,en,5.000000km around 28.697700 77.206900,Location of presence,Location of presence,No

@@ -254,7 +254,7 @@ export function LeadForm({
         </button>
 
         <p className="text-center text-xs text-muted-foreground">
-          No experience required. We&rsquo;ll help you take the first step.
+          📍 In-studio offline lessons at GTB Nagar Metro Gate 4, Delhi • No online classes
         </p>
       </form>
     </div>

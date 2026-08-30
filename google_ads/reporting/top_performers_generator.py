@@ -44,7 +44,7 @@ def generate_top_performing_ad_groups():
             ],
             "path1": "Guitar",
             "path2": "GtbNagar",
-            "final_url": "https://rhythmraga.in/book?course=Guitar"
+            "final_url": "https://rhytthmraga.com/book?course=Guitar"
         },
         {
             "name": "Top Performers - Piano & Keyboard",
@@ -82,7 +82,7 @@ def generate_top_performing_ad_groups():
             ],
             "path1": "Piano",
             "path2": "GtbNagar",
-            "final_url": "https://rhythmraga.in/book?course=Piano"
+            "final_url": "https://rhytthmraga.com/book?course=Piano"
         },
         {
             "name": "Top Performers - Drum Lessons",
@@ -119,7 +119,7 @@ def generate_top_performing_ad_groups():
             ],
             "path1": "Drums",
             "path2": "GtbNagar",
-            "final_url": "https://rhythmraga.in/book?course=Drums"
+            "final_url": "https://rhytthmraga.com/book?course=Drums"
         },
         {
             "name": "Top Performers - Singing & Vocals",
@@ -157,7 +157,7 @@ def generate_top_performing_ad_groups():
             ],
             "path1": "Vocals",
             "path2": "GtbNagar",
-            "final_url": "https://rhythmraga.in/book?course=Vocals"
+            "final_url": "https://rhytthmraga.com/book?course=Vocals"
         },
         {
             "name": "Top Performers - Music Academy & School",
@@ -195,7 +195,7 @@ def generate_top_performing_ad_groups():
             ],
             "path1": "Academy",
             "path2": "GtbNagar",
-            "final_url": "https://rhythmraga.in/book"
+            "final_url": "https://rhytthmraga.com/book"
         }
     ]
 

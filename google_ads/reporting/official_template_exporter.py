@@ -21,12 +21,12 @@ class GoogleOfficialTemplateExporter:
             writer.writerow([
                 "Row Type", "Action", "Campaign status", "Campaign", "Campaign type",
                 "Networks", "Budget", "Budget type", "Bid strategy type", "Language",
-                "Location", "EU political ads"
+                "Location", "Location type", "Location exclude type", "EU political ads"
             ])
             writer.writerow([
                 "Campaign", "Add", "Enabled", blueprint.campaign_name, "Search",
                 "Google search", f"{blueprint.daily_budget_inr:.2f}", "Daily", "Manual CPC",
-                "en", "Delhi, India", "No"
+                "en", "5.000000km around 28.697700 77.206900", "Location of presence", "Location of presence", "No"
             ])
         files["campaign"] = camp_file
 
@@ -160,6 +160,33 @@ class GoogleOfficialTemplateExporter:
                     "Asset", "Add", "Campaign", blueprint.campaign_name, "Structured snippet",
                     "", snip.header, "; ".join(snip.values), "Enabled"
                 ])
-        files["callouts_snippets"] = callout_file
+        # 8. Excluded Locations CSV (Negative Locations Firewall)
+        loc_file = os.path.join(output_dir, "8_excluded_locations.csv")
+        excluded_locations = [
+            "Uttar Pradesh, India", "Bihar, India", "Maharashtra, India", "Karnataka, India",
+            "Tamil Nadu, India", "West Bengal, India", "Gujarat, India", "Rajasthan, India",
+            "Telangana, India", "Kerala, India", "Punjab, India", "Haryana, India",
+            "Madhya Pradesh, India", "Odisha, India", "Andhra Pradesh, India", "Assam, India",
+            "Jharkhand, India", "Uttarakhand, India", "Himachal Pradesh, India", "Jammu and Kashmir, India",
+            "Goa, India", "Chhattisgarh, India", "Tripura, India", "Meghalaya, India", "Manipur, India",
+            "United States", "Canada", "United Kingdom", "Australia", "Germany", "France",
+            "South Africa", "Nigeria", "United Arab Emirates", "Pakistan", "Bangladesh",
+            "Indonesia", "Kenya", "Uganda", "Malaysia", "Philippines", "Saudi Arabia", "Singapore"
+        ]
+        with open(loc_file, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow([
+                "Row Type", "Action", "Campaign", "Location", "Status"
+            ])
+            # Explicit target proximity
+            writer.writerow([
+                "Location", "Add", blueprint.campaign_name, "5.000000km around 28.697700 77.206900", "Enabled"
+            ])
+            # Excluded locations
+            for loc in excluded_locations:
+                writer.writerow([
+                    "Location", "Add", blueprint.campaign_name, loc, "Excluded"
+                ])
+        files["excluded_locations"] = loc_file
 
         return files

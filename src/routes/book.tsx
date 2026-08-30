@@ -146,7 +146,7 @@ function BookLead() {
     >
       <div className="glass-card rounded-3xl p-6 sm:p-8">
         <ul className="mb-6 grid gap-2 text-sm sm:text-base sm:grid-cols-2">
-          {["100% free — no card required", "30 minutes with a senior instructor", "In-person or over a call", "Limited slots this week"].map(
+          {["100% free — no card required", "30 mins with certified mentors", "In-person studio trial at GTB Nagar", "Limited slots this week"].map(
             (t) => (
               <li key={t} className="flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" aria-hidden />

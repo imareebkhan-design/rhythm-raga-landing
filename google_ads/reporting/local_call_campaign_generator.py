@@ -8,7 +8,7 @@ def generate_local_call_campaign():
     campaign_name = "LOCAL_CALLS_GMB_GTB_NAGAR_5KM"
     phone_number = "+918796574448"
     phone_country = "IN"
-    verification_url = "https://rhythmraga.in"
+    verification_url = "https://rhytthmraga.com"
 
     # 1. Campaign CSV
     camp_csv = os.path.join(output_dir, "1_local_campaign.csv")
@@ -17,12 +17,12 @@ def generate_local_call_campaign():
         writer.writerow([
             "Row Type", "Action", "Campaign status", "Campaign", "Campaign type",
             "Networks", "Budget", "Budget type", "Bid strategy type", "Language",
-            "Location", "EU political ads"
+            "Location", "Location type", "Location exclude type", "EU political ads"
         ])
         writer.writerow([
             "Campaign", "Add", "Enabled", campaign_name, "Search",
             "Google search", "350.00", "Daily", "Manual CPC",
-            "en", "Delhi, India", "No"
+            "en", "5.000000km around 28.697700 77.206900", "Location of presence", "Location of presence", "No"
         ])
 
     ad_groups = [
@@ -231,7 +231,33 @@ def generate_local_call_campaign():
                 neg, "Broad match"
             ])
 
-    print("✅ Successfully generated Google My Business Local Call Campaign package with strict character lengths.")
+    # 7. Excluded Locations CSV (Firewall against out-of-state and international leakage)
+    loc_csv = os.path.join(output_dir, "7_local_excluded_locations.csv")
+    excluded_locations = [
+        "Uttar Pradesh, India", "Bihar, India", "Maharashtra, India", "Karnataka, India",
+        "Tamil Nadu, India", "West Bengal, India", "Gujarat, India", "Rajasthan, India",
+        "Telangana, India", "Kerala, India", "Punjab, India", "Haryana, India",
+        "Madhya Pradesh, India", "Odisha, India", "Andhra Pradesh, India", "Assam, India",
+        "Jharkhand, India", "Uttarakhand, India", "Himachal Pradesh, India", "Jammu and Kashmir, India",
+        "Goa, India", "Chhattisgarh, India", "Tripura, India", "Meghalaya, India", "Manipur, India",
+        "United States", "Canada", "United Kingdom", "Australia", "Germany", "France",
+        "South Africa", "Nigeria", "United Arab Emirates", "Pakistan", "Bangladesh",
+        "Indonesia", "Kenya", "Uganda", "Malaysia", "Philippines", "Saudi Arabia", "Singapore"
+    ]
+    with open(loc_csv, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "Row Type", "Action", "Campaign", "Location", "Status"
+        ])
+        writer.writerow([
+            "Location", "Add", campaign_name, "5.000000km around 28.697700 77.206900", "Enabled"
+        ])
+        for loc in excluded_locations:
+            writer.writerow([
+                "Location", "Add", campaign_name, loc, "Excluded"
+            ])
+
+    print("✅ Successfully generated Google My Business Local Call Campaign package with strict character lengths and 5km negative location firewall.")
 
 if __name__ == "__main__":
     generate_local_call_campaign()
