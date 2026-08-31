@@ -30,7 +30,7 @@ function OutOfArea() {
   return (
     <BookingShell
       title="We haven't reached your area yet"
-      subtitle="Right now we run in-person classes within about 5 km of GTB Nagar, Delhi. We're expanding fast — your details are saved and we'll ping you the moment we open near you."
+      subtitle="Right now we run in-person classes within about 8 km of GTB Nagar, Delhi. We're expanding fast — your details are saved and we'll ping you the moment we open near you."
     >
       <div className="glass-card rounded-3xl p-6 sm:p-8">
         <div className="flex items-start gap-3">

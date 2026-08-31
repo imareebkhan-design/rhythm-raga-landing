@@ -199,7 +199,7 @@ function BookLead() {
               placeholder="110009"
               pattern="\d{6}"
               maxLength={6}
-              hint="So we can confirm we cover your area (~5 km)"
+              hint="Covering 8 km radius (GTB Nagar, Model Town, Civil Lines, North Campus, etc.)"
             />
           </div>
 
