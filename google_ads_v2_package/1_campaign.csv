@@ -1,2 +1,2 @@
-Row Type,Action,Campaign status,Campaign,Campaign type,Daily budget,Bid strategy type,Networks,Location,Radius,Unit,Location option,Languages
-Campaign,Add,Paused,RR_SEARCH_GTB_NAGAR_CORE,Search,400.00,Manual CPC,Google search,"28.6977, 77.2069",7.0,Kilometers,Location of presence,en
+Row Type,Action,Campaign status,Campaign,Campaign type,Networks,Budget,Budget type,Bid strategy type,Language
+Campaign,Add,Paused,RR_SEARCH_GTB_NAGAR_CORE,Search,Google search,400.00,Daily,Manual CPC,en

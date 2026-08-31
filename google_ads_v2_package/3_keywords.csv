@@ -1,4 +1,4 @@
-Row Type,Action,Keyword status,Campaign,Ad group,Keyword,Criterion type,Max CPC
+Row Type,Action,Keyword status,Campaign,Ad group,Keyword,Type,Default max. CPC
 Keyword,Add,Enabled,RR_SEARCH_GTB_NAGAR_CORE,AG_Guitar,guitar classes near me,Exact,24.00
 Keyword,Add,Enabled,RR_SEARCH_GTB_NAGAR_CORE,AG_Guitar,guitar classes in gtb nagar,Exact,24.00
 Keyword,Add,Enabled,RR_SEARCH_GTB_NAGAR_CORE,AG_Guitar,guitar lessons near me,Exact,24.00
