@@ -8,7 +8,7 @@ def generate_local_call_campaign():
     campaign_name = "LOCAL_CALLS_GMB_GTB_NAGAR_5KM"
     phone_number = "+918796574448"
     phone_country = "IN"
-    verification_url = "https://rhytthmraga.com"
+    verification_url = "https://www.rhytthmraga.com"
 
     # 1. Campaign CSV
     camp_csv = os.path.join(output_dir, "1_local_campaign.csv")

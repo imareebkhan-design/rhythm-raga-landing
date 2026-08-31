@@ -19,7 +19,7 @@ class SKAGBuilder:
         seed_topic: str,
         keywords_data: List[Dict[str, Any]],
         daily_budget_inr: float = 500.0,
-        final_url: str = "https://rhythmraga.in",
+        final_url: str = "https://www.rhytthmraga.com",
         max_skags: int = 10
     ) -> Dict[str, Any]:
         """

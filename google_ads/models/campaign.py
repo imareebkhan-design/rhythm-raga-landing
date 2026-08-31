@@ -18,7 +18,7 @@ class CampaignRequest:
     location: str
     budget: float
     objective: str = "lead_generation"
-    landing_page_url: str = "https://rhythmraga.in"
+    landing_page_url: str = "https://www.rhytthmraga.com"
     language: str = "English"
     bidding_strategy: str = "MANUAL_CPC"
     max_skags: int = 5
@@ -73,7 +73,7 @@ class KeywordCluster:
     primary_keyword: str
     variant_keywords: List[str] = field(default_factory=list)
     intent: IntentCategory = IntentCategory.HIGH_COMMERCIAL_LOCAL
-    landing_page_url: str = "https://rhythmraga.in"
+    landing_page_url: str = "https://www.rhytthmraga.com"
 
 @dataclass
 class NegativeKeyword:
@@ -201,7 +201,7 @@ class CampaignBlueprint:
     bidding_strategy: str = "MANUAL_CPC"
     campaign_name: str = ""
     campaign_type: str = "SEARCH"
-    landing_page_url: str = "https://rhythmraga.in"
+    landing_page_url: str = "https://www.rhytthmraga.com"
     ad_groups: List[AdGroupBlueprint] = field(default_factory=list)
     campaign_negative_keywords: List[NegativeKeyword] = field(default_factory=list)
     assets: CampaignAssets = field(default_factory=CampaignAssets)

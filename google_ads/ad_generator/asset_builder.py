@@ -24,7 +24,7 @@ class AssetBuilder:
         cls,
         business: str = "Rhythm Raga",
         location: str = "GTB Nagar, Delhi",
-        base_url: str = "https://rhythmraga.in",
+        base_url: str = "https://www.rhytthmraga.com",
         phone_number: str = "+918796574448"
     ) -> CampaignAssets:
         """

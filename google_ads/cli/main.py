@@ -68,8 +68,8 @@ def main():
     parser.add_argument(
         "--url", "-u",
         type=str,
-        default="https://rhythmraga.in",
-        help="Target Landing Page URL (default: https://rhythmraga.in)"
+        default="https://www.rhytthmraga.com",
+        help="Target Landing Page URL (default: https://www.rhytthmraga.com)"
     )
     parser.add_argument(
         "--language",
@@ -264,7 +264,7 @@ def main():
         rsa = sample_ag.responsive_search_ad
         print(f"\n✨ Sample RSA Preview (Ad Group: {sample_ag.ad_group_name}):")
         print(f"   Target Keyword : [{sample_ag.primary_keyword}] / \"{sample_ag.primary_keyword}\"")
-        print(f"   Display Path   : rhythmraga.in/{rsa.path1}/{rsa.path2}")
+        print(f"   Display Path   : www.rhytthmraga.com/{rsa.path1}/{rsa.path2}")
         print("   Headlines:")
         for h in rsa.headlines[:5]:
             pin_lbl = f" [{h.pinned_field}]" if h.pinned_field else ""

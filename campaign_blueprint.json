@@ -13,7 +13,7 @@
   "bidding_strategy": "MANUAL_CPC",
   "campaign_name": "SEARCH_SKAG_MUSIC_CLASSES_GTB_NAGAR__DELHI",
   "campaign_type": "SEARCH",
-  "landing_page_url": "https://rhythmraga.in",
+  "landing_page_url": "https://www.rhytthmraga.com",
   "ad_groups_count": 5,
   "ad_groups": [
     {
@@ -27,7 +27,7 @@
       ],
       "responsive_search_ad": {
         "final_urls": [
-          "https://rhythmraga.in"
+          "https://www.rhytthmraga.com"
         ],
         "path1": "MusicClasses",
         "path2": "GtbNagar",
@@ -137,7 +137,7 @@
       ],
       "responsive_search_ad": {
         "final_urls": [
-          "https://rhythmraga.in"
+          "https://www.rhytthmraga.com"
         ],
         "path1": "MusicClasses",
         "path2": "GtbNagar",
@@ -247,7 +247,7 @@
       ],
       "responsive_search_ad": {
         "final_urls": [
-          "https://rhythmraga.in"
+          "https://www.rhytthmraga.com"
         ],
         "path1": "MusicClasses",
         "path2": "GtbNagar",
@@ -357,7 +357,7 @@
       ],
       "responsive_search_ad": {
         "final_urls": [
-          "https://rhythmraga.in"
+          "https://www.rhytthmraga.com"
         ],
         "path1": "MusicClasses",
         "path2": "GtbNagar",
@@ -467,7 +467,7 @@
       ],
       "responsive_search_ad": {
         "final_urls": [
-          "https://rhythmraga.in"
+          "https://www.rhytthmraga.com"
         ],
         "path1": "MusicClasses",
         "path2": "GtbNagar",
@@ -848,61 +848,61 @@
         "text": "Learn Guitar",
         "description1": "Acoustic & Electric Guitar",
         "description2": "Offline Classes in GTB Nagar",
-        "final_url": "https://rhythmraga.in/book?course=Guitar"
+        "final_url": "https://www.rhytthmraga.com/book?course=Guitar"
       },
       {
         "text": "Learn Piano & Keys",
         "description1": "Western & Classical Keyboard",
         "description2": "Beginner to Advanced Batches",
-        "final_url": "https://rhythmraga.in/book?course=Piano"
+        "final_url": "https://www.rhytthmraga.com/book?course=Piano"
       },
       {
         "text": "Learn Drums",
         "description1": "Acoustic Drum Kits & Rhythm",
         "description2": "Hands-On Practice in Studio",
-        "final_url": "https://rhythmraga.in/book?course=Drums"
+        "final_url": "https://www.rhytthmraga.com/book?course=Drums"
       },
       {
         "text": "Singing & Vocals",
         "description1": "Classical & Western Singing",
         "description2": "Pitch & Voice Training",
-        "final_url": "https://rhythmraga.in/book?course=Vocals"
+        "final_url": "https://www.rhytthmraga.com/book?course=Vocals"
       },
       {
         "text": "1-on-1 Music Mentors",
         "description1": "Certified Expert Instructors",
         "description2": "Personalized Step-by-Step Plans",
-        "final_url": "https://rhythmraga.in/book"
+        "final_url": "https://www.rhytthmraga.com/book"
       },
       {
         "text": "Creative Art & Craft",
         "description1": "Sketching, Painting & Colors",
         "description2": "Kids & Teens Art Studio",
-        "final_url": "https://rhythmraga.in/book?course=Creative%20Art"
+        "final_url": "https://www.rhytthmraga.com/book?course=Creative%20Art"
       },
       {
         "text": "Book Free Trial Class",
         "description1": "30-Min In-Person Studio Demo",
         "description2": "Zero Obligation Free Session",
-        "final_url": "https://rhythmraga.in/book"
+        "final_url": "https://www.rhytthmraga.com/book"
       },
       {
         "text": "Batch Timings & Fees",
         "description1": "Flexible Morning & Evening",
         "description2": "Small Batches (Max 4-5)",
-        "final_url": "https://rhythmraga.in/#courses"
+        "final_url": "https://www.rhytthmraga.com/#courses"
       },
       {
         "text": "Visit GTB Nagar Studio",
         "description1": "Near Metro Gate 4 Hudson Lane",
         "description2": "Soundproof AC Practice Rooms",
-        "final_url": "https://rhythmraga.in/#location"
+        "final_url": "https://www.rhytthmraga.com/#location"
       },
       {
         "text": "Kids Music Batches",
         "description1": "Ages 4 to 14 Years Early Start",
         "description2": "Fun Interactive Curriculum",
-        "final_url": "https://rhythmraga.in/book?course=Not%20sure%20yet"
+        "final_url": "https://www.rhytthmraga.com/book?course=Not%20sure%20yet"
       }
     ],
     "callouts": [
