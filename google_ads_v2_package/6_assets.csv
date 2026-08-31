@@ -1,0 +1,14 @@
+Row Type,Action,Level,Campaign,Asset type,Text,Final URL,Phone number,Country code,Status
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Call,,,+918796574448,IN,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Callout,Free Trial Class,,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Callout,Gate 4 GTB Nagar Metro,,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Callout,Small Batches Max 4-5,,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Callout,Certified Mentors,,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Callout,Kids & Adults Welcome,,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Callout,Soundproof AC Studios,,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Sitelink,Book a Free Trial,https://www.rhytthmraga.com/book,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Sitelink,Guitar Classes,https://www.rhytthmraga.com/book?course=Guitar,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Sitelink,Piano Classes,https://www.rhytthmraga.com/book?course=Piano,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Sitelink,Vocal Classes,https://www.rhytthmraga.com/book?course=Vocals,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Sitelink,Drum Classes,https://www.rhytthmraga.com/book?course=Drums,,,Enabled
+Asset,Add,Campaign,RR_SEARCH_GTB_NAGAR_CORE,Sitelink,Visit Our Studio,https://www.rhytthmraga.com/,,,Enabled
