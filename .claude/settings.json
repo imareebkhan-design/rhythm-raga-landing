@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "extraKnownMarketplaces": {
+    "google-ads-skills": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/itallstartedwithaidea/google-ads-skills.git"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "google-ads-full@google-ads-skills": true
+  }
+}

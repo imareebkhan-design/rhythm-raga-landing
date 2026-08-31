@@ -40,6 +40,8 @@ __pycache__/
 *.pyc
 supabase/.temp/
 .agents/
-.claude/
+# Keep local Claude state out of git, but version the shared plugin/skill config
+.claude/*
+!.claude/settings.json
 
 google_ads_templates/
